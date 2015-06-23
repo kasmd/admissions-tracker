@@ -1,0 +1,16 @@
+<h1>Welcome, <%= @student.f_name %> <%= @student.l_name %></h1>
+
+
+<h2>Student Information:</h2>
+
+<p>Email: <%= @student.email %></p>
+<p>Phone Number: <%= @student.phone_number %></p>
+
+
+<!-- <p>Course applied: <%= @submission.course %></p>
+<p>Application status: <%= @submission.status %></p> -->
+
+<p>Course applied: <%= @user.submissions.course %></p>
+<p>Application status: <%= @user.submissions.status %></p>
+
+<%= link_to 'Logout', logout_path, method 'DELETE' %>
