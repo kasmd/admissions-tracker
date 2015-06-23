@@ -1,0 +1,8 @@
+<h1>All Courses</h1>
+<ul>
+	<% @courses.each do |course| %>
+	<li>
+		<a href="/courses/<%= course.id %>"><%= course.type %></a>
+	</li>
+	<% end %>
+</ul>
