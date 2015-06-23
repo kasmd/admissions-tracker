@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623210430) do
+ActiveRecord::Schema.define(version: 20150623233141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150623210430) do
   create_table "submissions", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "course_id"
-    t.string   "status"
+    t.string   "status",            default: "pending-phone"
     t.integer  "instructor_id"
     t.integer  "officer_id"
     t.datetime "created_at"
