@@ -13,21 +13,21 @@ Officer.destroy_all
 Course.destroy_all
 Submission.destroy_all
 
-student_1 = Student.create({role: "student", f_name: "Student", l_name: "Testberg", email: "s1@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
-student_2 = Student.create({role: "student", f_name: "Another", l_name: "Estudiante", email: "s2@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
-instructor = Instructor.create({role: "instructor", f_name: "Instructor", l_name: "Testman", email: "instructor@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
-officer = Officer.create({role: "officer", f_name: "Officer", l_name: "McTesterson", email: "officer@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+student_1 = Student.create({f_name: "Student", l_name: "Testberg", email: "s1@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+student_2 = Student.create({f_name: "Another", l_name: "Estudiante", email: "s2@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+instructor = Instructor.create({f_name: "Instructor", l_name: "Testman", email: "instructor@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+officer = Officer.create({f_name: "Officer", l_name: "McTesterson", email: "officer@test.com", password: "jk", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
 
 10.times do
-	Student.create({role: "student", f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "st", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+	Student.create({ f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "st", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
 end
 
 3.times do
-	Instructor.create({role: "instructor", f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "in", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+	Instructor.create({f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "in", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
 end
 
 2.times do
-	Officer.create({role: "officer", f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "of", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
+	Officer.create({f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "of", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
 end
 
 
