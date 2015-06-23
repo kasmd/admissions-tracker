@@ -1,0 +1,2 @@
+class Officer < User
+end
