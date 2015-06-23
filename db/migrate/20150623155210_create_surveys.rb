@@ -1,7 +1,7 @@
 class CreateSurveys < ActiveRecord::Migration
   def change
     create_table :surveys do |t|
-    	t.string :type
+    	t.string :interview
     end
   end
 end

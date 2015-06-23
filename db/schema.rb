@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150623161156) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string  "type"
+    t.string  "subject"
     t.date    "start_date"
     t.date    "end_date"
     t.string  "location"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150623161156) do
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.string "type"
+    t.string "interview"
   end
 
   create_table "users", force: :cascade do |t|
