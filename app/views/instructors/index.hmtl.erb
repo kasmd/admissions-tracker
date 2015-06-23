@@ -1,0 +1,9 @@
+<h1>Students</h1>
+
+<% @students.each do |student| %> 
+
+	<a href="/instructors/<%= student.id %>"> <%= student.lname %>, <%= student.fname %></a> 
+
+<% end %> 
+
+<%= link_to 'Logout', logout_path, method 'DELETE' %>
