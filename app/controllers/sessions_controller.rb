@@ -10,14 +10,19 @@ class SessionsController < ApplicationController
 
 			session[:user_id] = user.id
 
-			if session[:type] == 'Instructor'
-				redirect_to "/instructors/"
-		elsif session[:type] == 'Student'
-			redirect_to "/students/#{user.id}"
-		end 
-	end 
+			session[:user_type] = user.type
 
-	end 
+			if session[:user_type] == 'Instructor' || session[:user_type] == 'Officer'
+				redirect_to "/faculties/#{user.id}/students"
+			elsif session[:user_type] == 'Student'
+				redirect_to "/students/#{user.id}"
+			else 
+				redirect_to "/"
+			end 
+
+		end #if
+
+	end #create
 
 	def destroy
 		session[:user_id] = nil

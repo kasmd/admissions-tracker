@@ -1,0 +1,25 @@
+<h1>Welcome, <%= @student.f_name %> <%= @student.l_name %></h1>
+
+
+<h2>Student Information:</h2>
+
+<p>Email: <%= @student.email %></p>
+<p>Phone Number: <%= @student.phone_number %></p>
+
+<p>Course applied: <% @submissions.each do |submit|  %>
+	<%= submit.course.subject %> 
+	<% end %> 
+</p>
+
+<p>Application status: <% @submissions.each do |submit| %>
+	<%= submit.status %> 
+	<% end %> 
+</p>
+
+<% if session[:user_type] == 'Instructor'%> 
+	
+<%elsif session[:user_type] == 'Officer' %> 
+	<button>Office</button>
+<% end %> 
+
+<%= link_to 'Logout', logout_path, method: "DELETE" %> 
