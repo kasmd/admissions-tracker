@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20150623161156) do
     t.datetime "updated_at"
   end
 
+  create_table "answers_surveys", force: :cascade do |t|
+    t.integer "survey_id"
+    t.integer "answer_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string  "type"
     t.date    "start_date"
@@ -49,11 +54,6 @@ ActiveRecord::Schema.define(version: 20150623161156) do
 
   create_table "surveys", force: :cascade do |t|
     t.string "type"
-  end
-
-  create_table "surveys_answers", force: :cascade do |t|
-    t.integer "survey_id"
-    t.integer "answer_id"
   end
 
   create_table "users", force: :cascade do |t|
