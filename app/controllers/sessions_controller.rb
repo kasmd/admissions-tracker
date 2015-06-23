@@ -9,10 +9,14 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:password])
 
 			session[:user_id] = user.id
-			redirect_to user_path(user)
-		else 
-			redirect_to '/login'
+
+			if session[:type] == 'Instructor'
+				redirect_to "/instructors/"
+		elsif session[:type] == 'Student'
+			redirect_to "/students/#{user.id}"
 		end 
+	end 
+
 	end 
 
 	def destroy
