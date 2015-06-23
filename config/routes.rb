@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   delete '/login' => 'sessions#destroy'
 
   resources :sessions, only: [:create, :new, :destroy]
-  resources :courses, :submissions
+  resources :courses do
+  			resources :submissions, only: [:create, :new]
+
+  end
 
 end 

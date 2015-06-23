@@ -6,8 +6,7 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    @submission = Submission.new
-    @submission.student.fname
+    @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id])
   end
 
   private
