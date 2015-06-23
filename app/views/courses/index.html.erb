@@ -11,7 +11,7 @@
 		<form method="get" action="/courses/<%= course.id %>">
    		<button type="submit">Check Details of This Course</button>
 		</form>	
-		<form method="get" action="/submissions/new">
+		<form method="get" action="/courses/<%= course.id %>/submissions/new">
    		<button type="submit">Apply Now!</button>
 		</form>	
 	</ul>

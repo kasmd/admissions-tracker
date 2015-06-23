@@ -6,20 +6,11 @@
 <p>Email: <%= @student.email %></p>
 <p>Phone Number: <%= @student.phone_number %></p>
 
-<p>Course applied: <% @submissions.each do |submit|  %>
-	<%= submit.course.subject %> 
-	<% end %> 
-</p>
 
-<p>Application status: <% @submissions.each do |submit| %>
-	<%= submit.status %> 
-	<% end %> 
-</p>
+<!-- <p>Course applied: <%= @submission.course %></p>
+<p>Application status: <%= @submission.status %></p> -->
 
-<% if session[:user_type] == 'Instructor'%> 
-	
-<%elsif session[:user_type] == 'Officer' %> 
-	<button>Office</button>
-<% end %> 
+<p>Course applied: <%= @user.submissions.course %></p>
+<p>Application status: <%= @user.submissions.status %></p>
 
-<%= link_to 'Logout', logout_path, method: "DELETE" %> 
+<%= link_to 'Logout', logout_path, method 'DELETE' %>

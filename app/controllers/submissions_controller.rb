@@ -12,7 +12,7 @@ class SubmissionsController < ApplicationController
   private
 
   def submission_params
-    params.require(:submission).permit(:subject, :start_date)
+    params.require(:submission).permit(:user_id, :course_id)
   end
 
 
