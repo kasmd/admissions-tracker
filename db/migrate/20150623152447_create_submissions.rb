@@ -3,7 +3,7 @@ class CreateSubmissions < ActiveRecord::Migration
     create_table :submissions do |t|
     	t.references :student
     	t.references :course
-    	t.references :status
+    	t.string :status
     	t.integer :instructor_id
     	t.integer :officer_id
     	t.timestamps

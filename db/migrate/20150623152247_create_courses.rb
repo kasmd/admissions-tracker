@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
     	t.date :start_date
     	t.date :end_date
     	t.string :location
-    	t.currency :price
+    	t.decimal :price
     end
   end
 end
