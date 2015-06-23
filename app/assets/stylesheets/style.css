@@ -78,3 +78,33 @@ h1 {
 .homepage-button {
 	text-align: center;
 }
+
+/*----- Courses ------*/
+.course-list {
+	width: 900px;
+	margin: 0 auto;
+}
+
+div.course {
+	margin: 1.5em 0;
+	min-height: 7em;
+	padding: 1em;
+	border-radius: 2px;
+}
+
+div.course:hover {
+	background: #eee;
+}
+
+.course h3 {
+	display: inline-block;
+}
+
+.course ul {
+	list-style: none;
+	padding: 0;
+}
+
+.course li {
+	margin: 0 0 1em 0;
+}
