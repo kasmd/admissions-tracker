@@ -1,19 +1,18 @@
 class SubmissionsController < ApplicationController
-
-  def index
-    @submissions = Submission.all
-  end
-
-  def show
-    @submission = Submission.find(params[:id])
-  end
+  before_action :authorize
 
   def new
   	@submission = Submission.new
   end
 
   def create
+    @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id])
+  end
 
+  private
+
+  def submission_params
+    params.require(:submission).permit(:user_id, :course_id)
   end
 
 

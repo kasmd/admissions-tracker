@@ -1,1 +1,4 @@
-<%= @course.type %>
+<%= @course.subject %>
+<form method="get" action="/courses/<%= @course.id %>/submissions/new">
+   		<button type="submit">Apply Now!</button>
+</form>	
