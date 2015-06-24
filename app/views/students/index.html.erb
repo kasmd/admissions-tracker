@@ -1,8 +1,0 @@
- <h1>Students</h1>
-
-<% @students.each do |student| %> 
-
-	<a href="/faculties/<%= session[:user_id] %>/students/<%= student.id %>"> <%= student.l_name %>, <%= student.f_name %></a> 
-
-<% end %> 
-
