@@ -3,11 +3,14 @@ class SubmissionsController < ApplicationController
   before_action :students_only
 
   def new
-    @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
+    @submission = Submission.new
+    binding.pry
   end
 
   def create
+    @submissions = Submission.where(student_id: session[:user_id])
     @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id])
+    binding.pry
   end
 
   private
