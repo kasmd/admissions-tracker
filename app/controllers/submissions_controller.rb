@@ -1,8 +1,9 @@
 class SubmissionsController < ApplicationController
-  before_action :authorize
+  # before_action :authorize
 
   def new
-  	@submission = Submission.new
+    authorize
+    @submission = Submission.new
   end
 
   def create
