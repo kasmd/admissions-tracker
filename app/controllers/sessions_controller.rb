@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
+			# referer url - store in hidden input
+
 			if session[:user_type] == 'Instructor' || session[:user_type] == 'Officer'
 				redirect_to "/faculties/#{user.id}/students"
 			elsif session[:user_type] == 'Student'

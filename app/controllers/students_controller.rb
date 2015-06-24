@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-	before_action :authorize, expect: [:create, :new]
+	before_action :authorize, except: [:create, :new]
 	
 	def show
 		@student = User.find session[:user_id]

@@ -10,12 +10,11 @@ Rails.application.routes.draw do
 
   resources :faculties do
   	resources :students
-  end 
+  end
 
-  resources :sessions, only: [:create, :new, :destroy]
   resources :courses do
-  			resources :submissions, only: [:create, :new]
-  end 
+  	resources :submissions, only: [:create, :new]
+  end
 
 
 

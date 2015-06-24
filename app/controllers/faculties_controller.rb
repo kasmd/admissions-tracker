@@ -1,6 +1,7 @@
 class FacultiesController < ApplicationController
 
-	before_action :authorize, expect: [:create, :new]
+	before_action :authorize
+	before_action # instrucotors only
 
 	def index
 
