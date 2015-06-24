@@ -3,12 +3,24 @@ class SubmissionsController < ApplicationController
   before_action :students_only
 
   def new
-    @student = Student.find(session[:user_id])
-    @submission = @student.submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
+    current_user
+    @submission = current_user.submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
   end
 
   def create
-    @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id])
+    @submission = current_user.submissions.new(course_id: params[:course_id])
+    uploaded_file = params[:submission][:upload]
+    user_name = current_user.f_name + current_user.l_name
+    application_file_name = Rails.root.join('public', 'uploads', 'applications', ("course_#{params[:course_id]}"user_name + '.txt'))
+    @submission.application_file_name = application_file_name
+    File.open(application_file_name, 'wt') do |file|
+      file.write(uploaded_file.read)
+    end
+    if @submission.save
+      redirect_to '/students/submissions'
+    else
+      render :new
+    end
   end
 
   private
