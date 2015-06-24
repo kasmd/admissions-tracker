@@ -14,13 +14,8 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
-
-			if session[:user_type] == 'Instructor' 
-				redirect_to "/"
-			elsif session[:user_type] == 'Officer'
-				redirect_to "/officers/submissions"
-			elsif session[:user_type] == 'Student'
-				redirect_to "/students/#{user.id}"
+			if session[:user_type]
+				redirect_to "/#{user.type.downcase}s/submissions"
 			else 
 				redirect_to "/"
 			end
