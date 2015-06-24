@@ -6,19 +6,29 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'students#new'
-  post '/signup' => 'students#create'
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
   
-  resources :faculties, :students
+  # resources :faculties, :students
 
-  resources :faculties do
-  	resources :students
-  end 
+  # resources :faculties do
+  # 	resources :students
+  # end 
 
-  resources :sessions, only: [:create, :new, :destroy]
-  resources :courses do
-  			resources :submissions, only: [:create, :new]
-  end 
+  # resources :sessions, only: [:create, :new, :destroy]
+    resources :courses, only: [:index, :show] do
+    			resources :submissions, only: [:create, :new]
+    end 
+
+    namespace :officers do
+      resources :submissions, only: [:index, :show, :edit, :update]
+    end
+    namespace :instructors, only: [:show] do
+      resources :submissions, only: [:index, :show, :edit, :update]
+    end
+    namespace :students, only: [:show] do
+      resources :submissions, only: [:index, :show]
+    end
 
 
 

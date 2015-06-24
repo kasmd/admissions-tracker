@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class UsersController < ApplicationController
 
 	before_action :authorize, expect: [:create, :new]
 	
