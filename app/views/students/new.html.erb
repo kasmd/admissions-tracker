@@ -1,4 +1,5 @@
 <%= form_for @student do |form| %>
+  <input type="hidden" name="referer" value="<%= @referer %>">
   <%= form.label :f_name, 'First Name:' %>
   <%= form.text_field :f_name %> <br>
   <%= form.label :l_name, 'Last Name:' %>

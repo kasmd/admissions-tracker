@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
 	end
 
 	def new
+		@referer = URI(request.referer).path
 		@student = Student.new
 	end
 
