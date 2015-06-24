@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-
-  resources :students, as: 'signup', only: [:new, :create]
+  get '/signup' => 'students#new'
+  post '/signup' => 'students#create'
+  
+  # resources :students, as: 'signup', only: [:new, :create]
   
   # resources :faculties, :students
 
