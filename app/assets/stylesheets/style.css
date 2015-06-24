@@ -1,10 +1,34 @@
-body {
-	margin-bottom: 50px;
+/*----- All ------*/
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+html {
+	min-height: 100%;
+	position: relative;
 }
 
+body {
+	margin: 0 0 75px;
+	font-family: 'Ubuntu', sans-serif; 
+}
+
+.container {
+	min-height: 500px;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+/*----- Header ------*/
+
 header {
-	margin: 0 10px;
+	padding: 0 10px;
 	height: 75px;
+	background-color: #eee
 }
 
 nav ul {
@@ -26,19 +50,61 @@ nav li {
 	display: inline-block;
 }
 
-.float-right {
-	float: right;
-}
-
-.float-left {
-	float: left;
-}
+/*----- Footer ------*/
 
 footer {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	bottom:0;
-	height: 50px;
+	height: 75px;
 	width: 100%;
 	background-color: blue;
+}
+
+.site-footer {
+	text-align: center;
+}
+
+footer a {
+	color: white;
+	padding: 5px;
+}
+
+/*----- Public ------*/
+h1 {
+	text-align: center;
+}
+
+.homepage-button {
+	text-align: center;
+}
+
+/*----- Courses ------*/
+.course-list {
+	width: 900px;
+	margin: 0 auto;
+}
+
+div.course {
+	margin: 1.5em 0;
+	min-height: 7em;
+	padding: 1em;
+	border-radius: 2px;
+}
+
+div.course:hover {
+	background: #eee;
+}
+
+.course h3 {
+	display: inline-block;
+}
+
+.course ul {
+	list-style: none;
+	padding: 0;
+}
+
+.course li {
+	margin: 0 0 1em 0;
 }
