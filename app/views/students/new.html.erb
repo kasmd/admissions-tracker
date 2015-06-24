@@ -1,0 +1,14 @@
+<%= form_for @student do |form| %>
+  <%= form.label :f_name, 'First Name:' %>
+  <%= form.text_field :f_name %> <br>
+  <%= form.label :l_name, 'Last Name:' %>
+  <%= form.text_field :l_name %> <br>
+  <%= form.label :phone_number, 'Phone Number:' %>
+  <%= form.telephone_field :phone_number %> <br>
+  <%= form.label :email, 'Email:' %>
+  <%= form.email_field :email %> <br>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %> <br>
+  <%= form.submit 'SIGN UP' %>
+<% end %>
+
