@@ -19,5 +19,4 @@ class Submission < ActiveRecord::Base
 	belongs_to :course
 	has_many :answers
 	has_many :surveys, through: :answers
-	has_attached_file :file
 end
