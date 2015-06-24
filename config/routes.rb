@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end 
 
     namespace :officers do
+      root 'welcomes#officers'
       resources :submissions, only: [:index, :show, :edit, :update]
     end
     namespace :instructors, only: [:show] do
