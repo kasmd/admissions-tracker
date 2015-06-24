@@ -47,3 +47,16 @@ Submission.create(student: student_1, course: uxi, status: "pending-phone")
 Submission.create(student: student_2, course: wdi, status: "pending-phone", officer_id: officer)
 
 Submission.create(student: student_2, course: pmi, status: "rejected", officer_id: officer)
+
+Survey.questions.create(body: "Does the prospective student have critical thinking skills?")
+
+Survey.questions.create(body: "Are they comfortable with breaking down a problem?")
+
+Survey.questions.create(body: "Are they willing to collaborate with others?")
+
+Survey.questions.create(body: "Are they eager to learn about code?")
+
+Survey.questions.create(body: "Will they adhere to the school's code of conduct?")
+
+
+
