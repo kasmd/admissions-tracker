@@ -15,8 +15,12 @@
 	<%= submit_tag %> 
 
 <% end %>
+
 	
 	<p id="error"><%= flash[:error] %></p>
 	<p id="notice"><%= flash[:notice] %></p>
+
+<p>Don't have an account?</p>
+<a href="/students/new?redirect_path=<%= @redirect_path %>">Sign Up</a>
 
 <!-- to include logout link in individual students page and individual faculty pages -->

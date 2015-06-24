@@ -3,7 +3,6 @@ class SubmissionsController < ApplicationController
   # before_action :authorize
 
   def new
-    @redirect_path = request.path_info
     students_only
     @submission = Submission.new
   end

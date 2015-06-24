@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
 	def create
 		user = User.find_by({email: params[:email]})
-		@redirect_path = params[:redirect_path] || request.path_info
 
 		if user && user.authenticate(params[:password])
 
@@ -14,9 +13,11 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
+			@redirect_path = params[:redirect_path] || "/#{user.type.downcase}s/submissions"
+
 			if session[:user_type]
-				redirect_to "/#{user.type.downcase}s/submissions"
-			else 
+				redirect_to @redirect_path
+			else
 				redirect_to "/"
 			end
 		else
