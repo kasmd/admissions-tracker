@@ -30,6 +30,9 @@ class ApplicationController < ActionController::Base
 
   def officers_only
     authorize
+    if session[:user_type] != 'Officer'
+      render status: :forbidden
+    end
   end
 
 end
