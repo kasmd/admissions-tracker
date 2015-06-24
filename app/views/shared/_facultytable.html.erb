@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Application Number</th>
+    <th>Applicant Name</th>
+    <th>Course</th>   
+    <th>Status</th>
+    <th>Last Updated</th>
+    <th>Details</th>
+  </tr>
+    <% @submissions.each do |sub |%>
+      <tr>
+          <td><%= sub.id %></td>
+          <td><%= sub.student.l_name %>, <%= sub.student.f_name %></td>
+          <td><%= sub.course.subject %></td>
+          <td><%= sub.status %></td>
+          <td><%= sub.updated_at.strftime('%m/%d/%y %I:%M %P') %></td>
+          <td><a href="submissions/<%=sub.id%>">Application Details</a></td>
+      </tr>      
+     <% end %>
+</table>

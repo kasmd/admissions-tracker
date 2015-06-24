@@ -1,5 +1,6 @@
 module Students
 	class SubmissionsController < ApplicationController
+
 		def index
 			@submissions = Submission.where(student_id: session[:user_id])
 		end
@@ -10,3 +11,4 @@ module Students
 
 	end #class
 end #module
+
