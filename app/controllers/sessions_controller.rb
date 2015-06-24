@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
 	def new
 		@referer = URI(request.referer).path
-		binding.pry
 		# referer url - store in hidden input
 	end 
 

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class StudentsController < ApplicationController
 
 	before_action :authorize, except: [:create, :new]
 	
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		@referer = URI(request.referer).path
+		# @referer = URI(request.referer).path
 		@student = Student.new
 	end
 
