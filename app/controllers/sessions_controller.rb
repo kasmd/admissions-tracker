@@ -18,8 +18,9 @@ class SessionsController < ApplicationController
 				redirect_to "/students/#{user.id}"
 			else 
 				redirect_to "/"
-			end 
-
+			end
+		else
+			redirect_to login_path, :flash => { :error => "Incorrect email or password!" }
 		end #if
 
 	end #create
@@ -29,4 +30,4 @@ class SessionsController < ApplicationController
 		redirect_to '/login'
 	end 
 
-end 
+end

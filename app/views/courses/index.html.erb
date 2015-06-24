@@ -1,19 +1,14 @@
 <h1>All Courses</h1>
-
-<%= @courses.each do |course| %>
-<div>
-	<h3><%= course.subject %></h3>
-	<ul>
-		<li>First Day of Class: <%=course.start_date %></li>
-		<li>Last Day of Class: <%=course.end_date %></li>
-		<li>Location: <%=course.location %></li>
-		<li>Price: $<%=course.price %></li>
-		<form method="get" action="/courses/<%= course.id %>">
-   		<button type="submit">Check Details of This Course</button>
-		</form>	
-		<form method="get" action="/courses/<%= course.id %>/submissions/new">
-   		<button type="submit">Apply Now!</button>
-		</form>	
-	</ul>
+<div class="course-list">
+	<% @courses.each do |course| %>
+	<a href="/courses/<%= course.id %>">
+		<div class="course">
+			<h3><%= course.subject %></h3>
+			<ul class="float-right">
+				<li><%= course.start_date.strftime("%a, %e %b") %></li>
+				<li><%= course.location %></li>
+			</ul>
+		</div>
+	</a>
+	<% end %>
 </div>
-<% end %>

@@ -1,4 +1,9 @@
-<%= @course.subject %>
-<form method="get" action="/courses/<%= @course.id %>/submissions/new">
-   		<button type="submit">Apply Now!</button>
-</form>	
+<h1><%= @course.subject %></h1>
+<ul>
+	<li>First Day of Class: <%= @course.start_date %></li>
+	<li>Last Day of Class: <%= @course.end_date %></li>
+	<li>Location: <%= @course.location %></li>
+	<li>Price: $<%= '%.2f' % @course.price %></li>
+</ul>
+
+<a href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
