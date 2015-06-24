@@ -5,7 +5,7 @@
 	<nav class="float-right">
 		<ul class="logged-in">
 		  <li><a href="/">Home</a></li>
-		  <li><a href="/logout">Log Out</a></li>
+		  <li><%= link_to 'Logout', logout_path, method: "DELETE" %> </li>
 		</ul>
 		<ul class="logged-out">
 		  <li><a href="/signup">Sign Up</a></li>
