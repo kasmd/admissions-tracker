@@ -1,0 +1,15 @@
+<h1><%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
+
+
+
+<h3>Course Applied to: <%= @submission.course.subject %></h3>
+<h3>Status of Application: <%= @submission.status.capitalize %></h3>
+<h3>Last updated: <%= @submission.updated_at.strftime('%m/%d/%y %I:%M %P') %></h3>
+
+<!-- Render the application doc -->
+
+<% if session[:user_type] == 'Instructor'%> 
+    <button>Instructor</button>
+<%elsif session[:user_type] == 'Officer' %> 
+    <button>Start Phone Interview</button>
+<% end %> 

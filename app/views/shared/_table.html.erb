@@ -1,5 +1,3 @@
-<h1>Officers Page</h1>
-
 <style>
 table, th, td {
     border: 1px solid black;
@@ -17,7 +15,6 @@ th, td {
     <th>Status</th>
     <th>Last Updated</th>
     <th>Details</th>
-  	<th>Name</th>
   </tr>
   	<% @submissions.each do |sub |%>
 		  <tr>
@@ -25,11 +22,7 @@ th, td {
 			    <td><%= sub.course.subject %></td>
 			    <td><%= sub.status %></td>
 			    <td><%= sub.updated_at %></td>
-			    <td><a href="/officers/submissions/<%= sub.student.id %>">Application Details</a></td>
-			    <td><%= sub.student.l_name %>, <%= sub.student.f_name %></td>
+			    <td><a href="#">Application Details</a></td>
 		  </tr>      
 	   <% end %>
 </table>
-
-
-
