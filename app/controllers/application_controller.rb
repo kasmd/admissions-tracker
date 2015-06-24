@@ -30,22 +30,19 @@ class ApplicationController < ActionController::Base
   end
 
   def instructors_only
-    authorize
-    if session[:user_type] != 'Instructor'
+    if authorize && session[:user_type] != 'Instructor'
       render status: :forbidden
     end
   end
 
   def students_only
     if authorize && session[:user_type] != 'Student'
-      binding.pry
       render status: :forbidden
     end
   end
 
   def officers_only
-    authorize
-    if session[:user_type] != 'Officer'
+    if authorize && session[:user_type] != 'Officer'
       render status: :forbidden
     end
   end

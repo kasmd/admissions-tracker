@@ -1,10 +1,9 @@
 class SubmissionsController < ApplicationController
-  # before_action 
-  # before_action :authorize
+
+  before_action :students_only
 
   def new
-    students_only
-    @submission = Submission.new
+    @submission = Student.find(session[:user_id]).submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
   end
 
   def create

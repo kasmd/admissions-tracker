@@ -13,7 +13,6 @@ class StudentsController < ApplicationController
 	end
 
 	def new
-		binding.pry
 		@redirect_path = params[:redirect_path]
 		@student = Student.new
 	end
