@@ -7,6 +7,7 @@
 #
 
 class Survey < ActiveRecord::Base
+	belongs_to :submission
 	has_many :questions
 	# QUESTION Is this needed? Kelly D
 	# has_and_belongs_to_many :answers 

@@ -2,14 +2,16 @@ class StudentsController < ApplicationController
 
 	before_action :authorize, except: [:create, :new]
 	
-	def show
-		@student = User.find session[:user_id]
-		@submissions = @student.submissions
-	end 
+	# Can this be deleted? Someone check it out :)
 
-	def index
-		@students = Student.all
-	end
+	# def show
+	# 	@student = User.find session[:user_id]
+	# 	@submissions = @student.submissions
+	# end 
+
+	# def index
+	# 	@students = Student.all
+	# end
 
 	def new
 		@redirect_path = params[:redirect_path]

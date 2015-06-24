@@ -9,8 +9,6 @@ module Officers
 
 		def show
 			@submission = Submission.find(params[:id])
-			# to display questions and answers
-			@answer = Answer.find(params[:submission_id])
 		end
 
 	end

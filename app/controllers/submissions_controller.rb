@@ -1,5 +1,7 @@
 class SubmissionsController < ApplicationController
 
+  # To future Max: Clean this up -past Max
+
   before_action :students_only
 
   def new
