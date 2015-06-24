@@ -17,8 +17,8 @@ class Submission < ActiveRecord::Base
 	belongs_to :instructor
 	belongs_to :officer
 	belongs_to :course
-	has_many :answers
-	has_many :surveys, through: :answers
+	has_many :surveys
+	has_many :answers, through: :surveys
 
 	# has_attached_file :file
 

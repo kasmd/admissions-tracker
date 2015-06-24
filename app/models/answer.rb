@@ -14,5 +14,5 @@ class Answer < ActiveRecord::Base
 	belongs_to :question
 	# Question: Is that needed? Kelly D
 	# has_and_belongs_to_many :surveys
-	belongs_to :submission
+	belongs_to :survey
 end
