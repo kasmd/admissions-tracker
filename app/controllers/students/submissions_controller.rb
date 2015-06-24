@@ -1,3 +1,12 @@
-class SubmissionsController < ApplicationController
+module Students
+	class SubmissionsController < ApplicationController
+		def index
+			@submissions = Submission.where(student_id: session[:user_id])
+		end
 
-end
+		def show
+			
+		end
+
+	end #class
+end #module
