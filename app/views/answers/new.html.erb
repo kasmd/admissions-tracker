@@ -1,0 +1,9 @@
+<form method="POST" action="/submissions/<%= params[:submission_id] %>/surveys">
+<% @survey.questions.each do |question| %>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label for="<%= question.id %>"><%= question.body %></label><br>
+	<input type="text" name="<%= question.id %>"><br>
+<% end %>
+	<input type="submit" value="submit">
+</form>
+ 

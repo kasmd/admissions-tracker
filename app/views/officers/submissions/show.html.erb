@@ -1,1 +1,37 @@
-<%= render 'shared/submissions_show' %>
+render submissions_show partial here -->
+
+
+<h1><%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
+
+
+
+<h3>Course Applied to: <%= @submission.course.subject %></h3>
+<h3>Status of Application: <%= @submission.status.capitalize %></h3>
+<h3>Last updated: <%= @submission.updated_at.strftime('%m/%d/%y %I:%M %P') %></h3>
+
+<!-- Render the application doc -->
+
+
+<!-- PHONE INTERVIEW -->
+
+<!-- Question -->
+<% @answer.question.each do |question| %>
+<%= question.body %>
+<% end %>
+
+<!-- Value -->
+<% @answer.each do |answer| %>
+<%= answer.body %>
+<% end %
+
+
+
+<% if session[:user_type] == 'Instructor'%> 
+    <button>Instructor</button>
+<%elsif session[:user_type] == 'Officer' %> 
+    <a href="/submissions/<%= @submission.id %>/phone_screen"><button>Start Phone Interview</button></a>		
+<% end %> 
+
+<!-- 
+get '/submissions/:submission_id/surveys/:id/new' =>  'answers#new'
+get '/submissions/:submission_id/phone_screen'    =>  'answers#new'
