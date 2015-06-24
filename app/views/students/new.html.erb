@@ -1,4 +1,4 @@
-<%= form_for @student do |form| %>
+<%= form_for @student, url: signup_path do |form| %>
   <input type="hidden" name="referer" value="<%= @referer %>">
   <%= form.label :f_name, 'First Name:' %>
   <%= form.text_field :f_name %> <br>

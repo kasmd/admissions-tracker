@@ -6,31 +6,43 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end 
+  end
 
   helper_method :current_user
 
+  def student?
+    session[:user_type] == 'Student'
+  end
+
+  def instructor?
+    session[:user_type] == 'Instructor'
+  end
+
+  def officer?
+    session[:user_type] == 'Officer'
+  end
+
   def authorize
-    redirect_to '/login' unless current_user
-  end 
+    @redirect_path = request.path_info
+    unless current_user
+      redirect_to("/login?redirect_path=#{@redirect_path}") and return
+    end
+  end
 
   def instructors_only
-    authorize
-    if session[:user_type] != 'Instructor'
+    if authorize && session[:user_type] != 'Instructor'
       render status: :forbidden
     end
   end
 
   def students_only
-    authorize
-    if session[:user_type] != 'Student'
+    if authorize && session[:user_type] != 'Student'
       render status: :forbidden
     end
   end
 
   def officers_only
-    authorize
-    if session[:user_type] != 'Officer'
+    if authorize && session[:user_type] != 'Officer'
       render status: :forbidden
     end
   end
