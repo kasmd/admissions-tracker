@@ -108,3 +108,16 @@ div.course:hover {
 .course li {
 	margin: 0 0 1em 0;
 }
+
+/*----- Submission Table ------*/
+
+table {
+  width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
