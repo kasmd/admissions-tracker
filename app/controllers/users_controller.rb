@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :authorize, expect: [:create, :new]
+	before_action :authorize, except: [:create, :new]
 	
 	def show
 		@student = User.find session[:user_id]
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 	end
 
 	def new
+		@referer = URI(request.referer).path
 		@student = Student.new
 	end
 

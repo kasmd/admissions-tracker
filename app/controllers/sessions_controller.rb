@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
 	def new
+		@referer = URI(request.referer).path
+		binding.pry
+		# referer url - store in hidden input
 	end 
 
 	def create
@@ -11,6 +14,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 
 			session[:user_type] = user.type
+
 
 			if session[:user_type] == 'Instructor' || session[:user_type] == 'Officer'
 				redirect_to "/faculties/#{user.id}/students"
