@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
 
 	def new
-		@referer = URI(request.referer).path
-		# referer url - store in hidden input
+		@redirect_path = params[:redirect_path]
 	end 
 
 	def create
 		user = User.find_by({email: params[:email]})
+		@redirect_path = params[:redirect_path] || request.path_info
 
 		if user && user.authenticate(params[:password])
 
@@ -14,11 +14,10 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
-
 			if session[:user_type] == 'Instructor' || session[:user_type] == 'Officer'
 				redirect_to "/faculties/#{user.id}/students"
 			elsif session[:user_type] == 'Student'
-				redirect_to "/students/#{user.id}"
+				redirect_to @redirect_path
 			else 
 				redirect_to "/"
 			end

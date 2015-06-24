@@ -2,6 +2,10 @@
 
 <%= form_tag '/login' do %> 
 	
+	<% if @redirect_path %>
+	<%= hidden_field_tag :redirect_path, @redirect_path %>
+	<% end %>
+
 	<%= label_tag :email %> 
 	<%= text_field_tag :email%> 
 
