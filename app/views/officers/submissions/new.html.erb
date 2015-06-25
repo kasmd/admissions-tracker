@@ -1,8 +1,26 @@
 <h1>Phone Interview</h1>
 
-<%= form_for Phone.new, :url => {:action => :create, :controller => :'officers/submissions'} do |f| %> 
-	<%= label_tag(:q1, "Does the prospective student have critical thinking skills?") %> 
-	<%= f.text_field :q1 %> 
+<%= form_for [:officers, @submission, @phonescreen] do |f| %> 
+	<%= f.label(:q1, "Does the prospective student have critical thinking skills?") %>
+	<%= f.radio_button(:q1, "1") %> 
+	<%= f.radio_button(:q1, "2") %> 
+	<%= f.radio_button(:q1, "3") %> 
+	<%= f.radio_button(:q1, "4") %> 
+	<%= f.radio_button(:q1, "5") %> 
+
+	<%= f.label(:q2, "Are they comfortable with breaking down a problem?") %> 
+	<%= f.text_field :q2 %> 
+
+	<%= f.label(:q3, "Does the prospective student have critical thinking skills?") %> 
+	<%= f.text_field :q3  %> 
+
+	<%= f.label(:q4, "Are they willing to collaborate with others?") %> 
+	<%= f.text_field :q4 %> 
+
+
+	<%= f.label(:q5, "Will they adhere to the school's code of conduct?") %> 
+	<%= f.text_field :q5 %> 
+
 	<%= f.submit %> 
 
 
