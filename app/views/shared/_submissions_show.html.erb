@@ -10,12 +10,12 @@
 
 
 <%# Render the application doc %>
-<div class="submission-attachment"><%= @submission.render_attachment %></div>
+<div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
 
 <%# PHONE Results go here %>
 
 
-<% if @submission.status == 'pending-inperson' %>  
+<% if @submission.status == 'pending-in-person' %>  
 
 	<%= render 'shared/genericquestionnaire' %> 
 
@@ -23,22 +23,22 @@
 
  	<%= render 'shared/genericquestionnaire' %> 
 
-		<% if @submission.course.subject == 'wdi' %> 
-				<%= render 'shared/wdiinperson' %> 
-		<% elsif @submission.course.subject == 'uxi' %> 
-				<%= render 'shared/uxiinperson' %> 
-		<% elsif @submission.course.subject == 'pmi'%> 
-				<%= render 'shared/pmiinperson' %> 
-		<% end %> 
+	<% if @submission.course.subject == 'wdi' %> 
+		<%= render 'shared/wdiinperson' %> 
+	<% elsif @submission.course.subject == 'uxi' %> 
+		<%= render 'shared/uxiinperson' %> 
+	<% elsif @submission.course.subject == 'pmi'%> 
+		<%= render 'shared/pmiinperson' %> 
+	<% end %> 
 	
 	<%#  this is where you put the score and change the status!!!!! %> 
 <% end %> 
 
 
-<% if session[:user_type] == 'Instructor'%> 
-    <a href="/instructors/submissions/<%= @submission.id %>/interview/new"><button>Start In-Person Interview</button></a>		
-<%elsif session[:user_type] == 'Officer' %> 
-    <a href="/officers/submissions/<%= @submission.id %>/phonescreen/new"><button>Start Phone Interview</button></a>		
+<% if session[:user_type] == 'Instructor' && @submission.status == 'pending-in-person' %> 
+  <a href="/instructors/submissions/<%= @submission.id %>/interview/new"><button>Start In-Person Interview</button></a>		
+<% elsif session[:user_type] == 'Officer' && @submission.status == 'pending-phone' %> 
+  <a href="/officers/submissions/<%= @submission.id %>/phonescreen/new"><button>Start Phone Interview</button></a>		
 <% end %> 
 
 

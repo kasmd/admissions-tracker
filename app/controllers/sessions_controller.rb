@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
-			redirect_path = session[:redirect] || "/#{user.type.downcase}s/submissions"
+			redirect_path = session[:redirect] || "/#{user.type_path}/submissions"
 			session[:redirect] = nil
 
 			if session[:user_type]
