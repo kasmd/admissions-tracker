@@ -1,14 +1,14 @@
 <h1>In-Person Interview</h1>
 
-<%= form_for [:instructors, @submission, @interview] do |f| %> 
+<%= form_for Interview.new, :url => {:action => :create, :controller => :"instructors/submissions"} do |f| %> 
 	<%= f.label(:q1, %> 
-		<% if @submission.course.subject == 'wdi' %> 
-			"What is your background?"
-		<% elsif @submission.course.subject == 'uxi' %> 
-				"What is your design background?" 
-		<% elsif @submission.course.subject == 'pmi'%> 
-				"What is your management background?"
-		<% end %> 
+		<% if @submission.course.subject == 'WDI' %> 
+			<%= "What is your background?" %>
+		<% elsif @submission.course.subject == 'UXI' %> 
+				<%= "What is your design background?" %>
+		<% elsif @submission.course.subject == 'PMI'%> 
+				<%= "What is your management background?" %>
+				<% end %>
 	<% ) %>
 	<%= label :q1, '1' %> 
 	<%= f.radio_button(:q1, "1") %> 
@@ -21,8 +21,16 @@
 		<%= label :q1, '5' %> 
 	<%= f.radio_button(:q1, "5") %> <br>
 
-	<%= f.label(:q2, "Are they comfortable with breaking down a problem?") %> 
-<%= label :q2, '1' %> 
+	<%= f.label(:q2, %> 
+		<% if @submission.course.subject == 'WDI' %> 
+			<%= "Tell us about a time you had a complex problem and how you solved it." %>
+		<% elsif @submission.course.subject == 'UXI' %> 
+				<%= "How comfortable are you with HTML and CSS?" %>
+		<% elsif @submission.course.subject == 'PMI'%> 
+				<%= "How comfortable are you working with technical people?" %>
+				<% end %>
+	<% ) %>
+	<%= label :q2, '1' %> 
 	<%= f.radio_button(:q2, "1") %> 
 		<%= label :q2, '2' %> 
 	<%= f.radio_button(:q2, "2") %> 
@@ -34,7 +42,15 @@
 	<%= f.radio_button(:q2, "5") %> <br>
 
 
-	<%= f.label(:q3, "How comfortable are you with learning technical language?") %><%= f.radio_button(:q3, "1") %> 
+	<%= f.label(:q3, %>
+		<% if @submission.course.subject == 'WDI' %> 
+			<%= "Tell us about a time you had to collaborate with a difficult team mate." %>
+		<% elsif @submission.course.subject == 'UXI' %> 
+				<%= "Tell us about a project you had to complete with a fast turn around." %>
+		<% elsif @submission.course.subject == 'PMI'%> 
+				<%= "Tell us about a time you had to collaborate with a difficult team mate." %>
+				<% end %>
+	<% ) %>
 	<%= label :q3, '1' %> 
 	<%= f.radio_button(:q3, "1") %> 
 		<%= label :q3, '2' %> 
@@ -47,8 +63,16 @@
 	<%= f.radio_button(:q3, "5") %> <br>
 
 
-	<%= f.label(:q4, "Are they willing to collaborate with others?") %> 
-<%= label :q4, '1' %> 
+	<%= f.label(:q4,  %>
+		<% if @submission.course.subject == 'WDI' %> 
+			<%= "What are your career goals?" %>
+		<% elsif @submission.course.subject == 'UXI' %> 
+				<%= "What are your career goals?" %>
+		<% elsif @submission.course.subject == 'PMI'%> 
+				<%= "If you weren't interested in coding, what is your dream job?" %>
+				<% end %>
+	<% ) %>
+	<%= label :q4, '1' %> 
 	<%= f.radio_button(:q4, "1") %> 
 		<%= label :q4, '2' %> 
 	<%= f.radio_button(:q4, "2") %> 
@@ -59,8 +83,8 @@
 		<%= label :q4, '5' %> 
 	<%= f.radio_button(:q4, "5") %> <br>
 
-	<%= f.label(:q5, "Will they adhere to the school's code of conduct?") %> 
-	<%= label :q5, '1' %> 
+	<%= f.label(:q5, "If you weren't interested in coding, what is your dream job?") %>  
+		<%= label :q5, '1' %> 
 	<%= f.radio_button(:q5, "1") %> 
 		<%= label :q5, '2' %> 
 	<%= f.radio_button(:q5, "2") %> 
@@ -75,5 +99,5 @@
 
 	<%= f.submit %> 
 
-	<% end %> 
+<% end %>
 

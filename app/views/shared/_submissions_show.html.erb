@@ -9,8 +9,6 @@
 
 <%# Render the application doc %>
 
-<%# PHONE Results go here %>
-
 
 <% if @submission.status == 'pending-inperson' %>  
 
@@ -30,6 +28,7 @@
 	
 	<%#  this is where you put the score and change the status!!!!! %> 
 <% end %> 
+
 
 
 <% if session[:user_type] == 'Instructor'%> 
