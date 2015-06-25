@@ -1,9 +1,26 @@
 <h1>Phone Interview</h1>
 
 <%= form_for Phone.new, :url => {:action => :create, :controller => :'officers/submissions'} do |f| %> 
-	<%= label_tag(:q1, "Does the prospective student have critical thinking skills?") %> 
-	<%= f.text_field :q1 %> 
-	<%= f.submit %> 
+
+	<%= label_tag(:q1, "Does the prospective student have critical thinking skills?") %><br>
+	<%= f.select :q1, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %><br>
+
+	<%= label_tag(:q2, "Are they comfortable with breaking down a problem?") %><br>
+	<%= f.select :q2, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %><br>
+
+	<%= label_tag(:q3, "Are they willing to collaborate with others?") %><br>
+	<%= f.select :q3, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %><br>
+
+	<%= label_tag(:q4, "Are they eager to learn about code?") %><br>
+	<%= f.select :q4, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %><br>
+
+	<%= label_tag(:q5, "Will they adhere to the school's code of conduct?") %><br>
+	<%= f.select :q5, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %><br>
+
+	<%= label_tag(:notes, "Notes:") %><br>
+	<%= f.text_field :notes %><br>
+
+	<%= f.submit "Submit Questionnaire" %> 
 
 
 <% end %> 
