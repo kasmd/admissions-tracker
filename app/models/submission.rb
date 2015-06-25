@@ -42,6 +42,10 @@ class Submission < ActiveRecord::Base
 		end
 	end
 
+	def interview_change_status
+		# add to this
+	end
+
 	def has_attachment
 		!self.application_file_name.nil?
 	end

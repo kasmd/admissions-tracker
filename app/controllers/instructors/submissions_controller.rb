@@ -19,13 +19,19 @@ module Instructors
 
 		def create
 			submission = Submission.find(params[:id])
-			submission.interview = Interview.new(params[:interview].permit(:q1, :q2, :q3, :q4, :q5, :notes))
+			submission.interview = Interview.new(interview_params)
 			if submission.interview.save
 				binding.pry
 				redirect_to "/instructors/submissions"
 			else
 				render :new
 			end
+		end
+
+		private
+
+		def interview_params
+			params.require(:interview).permit(:q1, :q2, :q3, :q4, :q5, :notes)
 		end
 
 	end #class
