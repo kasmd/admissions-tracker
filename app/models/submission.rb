@@ -32,7 +32,8 @@ class Submission < ActiveRecord::Base
 	end
 
 	def render_attachment
-		f = File.open()
+		f = File.open(self.application_file_name)
+		f.read
 	end
 
 end
