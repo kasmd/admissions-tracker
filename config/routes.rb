@@ -7,15 +7,6 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get '/signup' => 'students#new'
   post '/signup' => 'students#create'
-  
-
-  # resources :faculties, :students
-
-  # resources :faculties do
-  # 	resources :students
-  # end 
-
-  # resources :sessions, only: [:create, :new, :destroy]
 
   get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
   post '/officers/submissions/:id' => 'officers/submissions#create'
