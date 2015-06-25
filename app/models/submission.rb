@@ -31,4 +31,7 @@ class Submission < ActiveRecord::Base
 
 	end
 
+	def render_attachment
+	end
+
 end
