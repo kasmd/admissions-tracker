@@ -56,7 +56,7 @@ Submission.create(student: student_2, course: wdi, status: "pending-phone", offi
 
 Submission.create(student: student_2, course: pmi, status: "rejected", officer_id: officer, phone_id: phone_fail.id)
 
-binding.pry
+
 
 # QUESTIONNAIRE
 
@@ -96,5 +96,3 @@ binding.pry
 # 	{body: "What are your career goals?"}, 
 # 	{body: "If you weren't interested in coding, what is your dream job?"}
 # ])
-
-

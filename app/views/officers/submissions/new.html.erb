@@ -1,0 +1,9 @@
+<h1>Phone Interview</h1>
+
+<%= form_for Phone.new, :url => {:action => :create, :controller => :'officers/submissions'} do |f| %> 
+	<%= label_tag(:q1, "Does the prospective student have critical thinking skills?") %> 
+	<%= f.text_field :q1 %> 
+	<%= f.submit %> 
+
+
+<% end %> 

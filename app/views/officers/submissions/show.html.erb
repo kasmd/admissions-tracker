@@ -22,7 +22,7 @@
 <% if session[:user_type] == 'Instructor'%> 
     <button>Instructor</button>
 <%elsif session[:user_type] == 'Officer' %> 
-    <a href="/submissions/<%= @submission.id %>/phone_screen"><button>Start Phone Interview</button></a>		
+    <a href="/officers/submissions/<%= @submission.id %>/phonescreen/new"><button>Start Phone Interview</button></a>		
 <% end %> 
 
 
