@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+=# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -47,3 +47,44 @@ Submission.create(student: student_1, course: uxi, status: "pending-phone")
 Submission.create(student: student_2, course: wdi, status: "pending-phone", officer_id: officer)
 
 Submission.create(student: student_2, course: pmi, status: "rejected", officer_id: officer)
+
+# QUESTIONNAIRE
+
+# Generic_phone = Survey.create(interview: "WDI Phone")
+# WDI_person = Survey.create(interview: "WDI Person")
+# UXI_person = Survey.create(interview: "UXI Person")
+# PMI_person = Survey.create(interview: "PMI Person")
+
+# Generic_phone.questions.create([
+# 	{body: "Does the prospective student have critical thinking skills?"},
+# 	{body: "Are they comfortable with breaking down a problem?"},
+# 	{body: "Are they willing to collaborate with others?"},
+# 	{body: "Are they eager to learn about code?"},
+# 	{body: "Will they adhere to the school's code of conduct?"}
+# ])
+
+# WDI_person.questions.create([
+# 	{body: "What is your background?"}, 
+# 	{body: "Tell us about a time you had a complex problem and how you solved it."}, 
+# 	{body: "Tell us about a time you had to collaborate with a difficult team mate."}, 
+# 	{body: "What are your career goals?"}, 
+# 	{body: "If you weren't interested in coding, what is your dream job?"}
+# ])
+
+# UXI_person.questions.create([
+# 	{body: "What is your design background?"},
+# 	{body: "How comfortable are you with HTML and CSS?"}, 
+# 	{body: "Tell us about a project you had to complete with a fast turn around."}, 
+# 	{body: "What are your career goals?"}, 
+# 	{body: "If you weren't interested in coding, what is your dream job?"}
+# ])
+
+# PMI_person.questions.create([
+# 	{body: "What is your managment background?"},
+# 	{body: "How comfortable are you working with technical people?"},
+# 	{body: "Tell us about a time you had to collaborate with a difficult team mate."},  
+# 	{body: "What are your career goals?"}, 
+# 	{body: "If you weren't interested in coding, what is your dream job?"}
+# ])
+
+
