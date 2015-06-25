@@ -9,6 +9,7 @@ module Officers
 
 		def show
 			@submission = Submission.find(params[:id])
+			binding.pry
 		end
 
 		def new
