@@ -1,0 +1,395 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Rillate Referece Checker",
+        "description": "An API to facilitate automated reference checks, such as during employment application workflow",
+        "termsOfService": "http://rillate.com/legal/",
+        "contact": {
+            "name": "Rillate API team api@rillate.com",
+            "email": "api@rillate.com",
+            "url": "http://rillate.com/product"
+        }
+    },
+    "host": "api.rillate.com",
+    "basePath": "/ref",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/referenceChecks": {
+            "post": {
+                "description": "asynchronously queues a reference check",
+                "operationId": "startReferenceCheck",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "referenceCheckRequest",
+                        "in": "body",
+                        "description": "Input parameters necessary to create a reference check",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ReferenceCheckRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "reference created / looked up",
+                        "schema": {
+                            "$ref": "#/definitions/ReferenceCheck"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/referenceChecks/{id}": {
+            "get": {
+                "description": "Returns a reference check based on Id",
+                "operationId": "findReferenceCheckById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of reference check to fetch",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "reference check response",
+                        "schema": {
+                            "$ref": "#/definitions/ReferenceCheck"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/referenceChecks/{id}/report": {
+            "get": {
+                "description": "Returns report containing results for the reference check. If checks are still in progress, report status will show 'in progress'. Repeat call should be made after a reasonable interval (we recommend hourly polls)",
+                "operationId": "findReferenceCheckResultById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of reference check to fetch report on",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "reference check report data",
+                        "schema": {
+                            "$ref": "#/definitions/ReferenceCheckReport"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Candidate": {
+            "required": [
+                "email"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "dateOfBirth": {
+                    "type": "string"
+                }
+            }
+        },
+        "Employer": {
+            "required": [
+                "ein"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ein": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "externalId": {
+                    "type": "string"
+                }
+            }
+        },
+        "Referral": {
+            "required": [
+                "referenceEmail"
+            ],
+            "properties": {
+                "referenceEmail": {
+                    "type": "string"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "enum": [
+                        "peer",
+                        "manager",
+                        "client"
+                    ]
+                }
+            }
+        },
+        "ReferenceCheckRequest": {
+            "required": [
+                "candidate",
+                "employer",
+                "references"
+            ],
+            "properties": {
+                "reportType": {
+                    "type": "string",
+                    "enum": [
+                        "lite",
+                        "basic",
+                        "plus",
+                        "education"
+                    ]
+                },
+                "candidate": {
+                    "$ref": "#/definitions/Candidate"
+                },
+                "employer": {
+                    "$ref": "#/definitions/Employer"
+                },
+                "resume": {
+                    "type": "string"
+                },
+                "references": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Referral"
+                    }
+                }
+            }
+        },
+        "ReferenceCheck": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "referenceCheckRequest": {
+                    "$ref": "#/definitions/ReferenceCheckRequest"
+                },
+                "reportUrl": {
+                    "type": "string",
+                    "format": "url"
+                }
+            }
+        },
+        "ReferenceCheckReport": {
+            "required": [
+                "referenceCheckRequest",
+                "status"
+            ],
+            "properties": {
+                "referenceCheckRequest": {
+                    "$ref": "#/definitions/ReferenceCheckRequest"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "complete",
+                        "inprogress",
+                        "unknown",
+                        "expired"
+                    ]
+                },
+                "educationChecks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/EducationRecord"
+                    }
+                },
+                "educationStatus": {
+                    "$ref": "#/definitions/EducationStatus"
+                },
+                "factChecks": {
+                    "$ref": "#/definitions/FactChecks"
+                },
+                "sentiments": {
+                    "$ref": "#/definitions/Sentiments"
+                },
+                "addenda": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Addendum"
+                    }
+                }
+            }
+        },
+        "EducationRecord": {
+            "properties": {
+                "school": {
+                    "type": "string"
+                },
+                "degree": {
+                    "type": "string"
+                },
+                "schoolCheckStatus": {
+                    "type": "string"
+                },
+                "degreeCheckStatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "EducationStatus": {
+            "properties": {
+                "currentlyEnrolled": {
+                    "type": "string"
+                },
+                "graduated": {
+                    "type": "string"
+                }
+            }
+        },
+        "FactChecks": {
+            "properties": {
+                "totalNumberOfReferences": {
+                    "type": "integer"
+                },
+                "qualifiedNumberOfReferences": {
+                    "type": "integer"
+                },
+                "factCheckResults": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FactCheckResult"
+                    }
+                },
+                "factScore": {
+                    "$ref": "#/definitions/FractionScore"
+                }
+            }
+        },
+        "FactCheckResult": {
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "score": {
+                        "$ref": "#/definitions/FractionScore"
+                    }
+                }
+            }
+        },
+        "FractionScore": {
+            "properties": {
+                "confirmedCount": {
+                    "type": "integer"
+                },
+                "totalCount": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Sentiments": {
+            "properties": {
+                "sentimentResults": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SentimentResult"
+                    }
+                },
+                "overallScore": {
+                    "type": "number",
+                    "format": "float"
+                }
+            }
+        },
+        "SentimentResult": {
+            "properties": {
+                "sentimentString": {
+                    "type": "string"
+                },
+                "sentimentScore": {
+                    "type": "number",
+                    "format": "float"
+                }
+            }
+        },
+        "Addendum": {
+            "properties": {
+                "question": {
+                    "type": "string"
+                },
+                "answer": {
+                    "type": "string"
+                }
+            }
+        },
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
