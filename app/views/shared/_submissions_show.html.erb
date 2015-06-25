@@ -9,7 +9,7 @@
 <!-- Render the application doc -->
 
 <% if session[:user_type] == 'Instructor'%> 
-    <button>Instructor</button>
+    <a href="/instructors/submissions/<%= @submission.id%>/interview/new"><button>Start In-Person Interview</button></a>
 <%elsif session[:user_type] == 'Officer' %> 
     <a href="/officers/submissions/<%= @submission.id%>/phonescreen/new"><button>Start Phone Interview</button></a>
 <% end %> 
