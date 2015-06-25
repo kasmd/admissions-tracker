@@ -5,10 +5,13 @@ class SubmissionsController < ApplicationController
   before_action :students_only
 
   def new
+    # checks if the current user has already submitted for this course
     if current_user.has_already_submitted?(params[:course_id])
-      redirect_to "/students/submissions/#{current_user.this_submission_id(params[:course_id])}"
+      # else redirects to their submission for that course
+      redirect_to students_submission_path(current_user.submission_for(params[:course_id]))
+      # look at those beautiful semantically named methods
     else
-      @submission = current_user.submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
+      @submission = current_user.submissions.new(course_id: params[:course_id])
     end
   end
 

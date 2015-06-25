@@ -19,4 +19,8 @@ class Submission < ActiveRecord::Base
 	belongs_to :course
 	has_one :phonescreen
 	has_one :interview
+
+	def save_attachment(attachment)
+	end
+
 end

@@ -24,7 +24,7 @@ class Student < User
 		submissions.include?(course_id.to_i)
 	end
 
-	def this_submission_id(course_id)
+	def submission_for(course_id)
 		submission = self.submissions.where(course_id: course_id).first
 		submission.id
 	end
