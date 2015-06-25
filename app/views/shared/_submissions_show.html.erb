@@ -10,7 +10,7 @@
 <%# Render the application doc %>
 
 
-<% if @submission.status == 'pending-inperson' %>  
+<% if @submission.status == 'pending-in-person' %>  
 
 	<%= render 'shared/genericquestionnaire' %> 
 
@@ -18,11 +18,11 @@
 
  	<%= render 'shared/genericquestionnaire' %> 
 
-		<% if @submission.course.subject == 'wdi' %> 
+		<% if @submission.course.subject == 'WDI' %> 
 				<%= render 'shared/wdiinperson' %> 
-		<% elsif @submission.course.subject == 'uxi' %> 
+		<% elsif @submission.course.subject == 'UXI' %> 
 				<%= render 'shared/uxiinperson' %> 
-		<% elsif @submission.course.subject == 'pmi'%> 
+		<% elsif @submission.course.subject == 'PMI'%> 
 				<%= render 'shared/pmiinperson' %> 
 		<% end %> 
 	

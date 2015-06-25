@@ -29,6 +29,5 @@ module Officers
 		end 
 
 
-
 	end #class
 end #module 

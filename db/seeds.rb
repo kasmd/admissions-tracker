@@ -32,9 +32,6 @@ end
 	Officer.create({f_name: "#{FFaker::Name.first_name}", l_name: "#{FFaker::Name.last_name}", email: "#{FFaker::Internet.email}", password: "of", phone_number: "#{FFaker::PhoneNumber.phone_number}" })
 end
 
-
-
-
 wdi = Course.create({subject: "WDI", start_date:"2015-06-23", end_date:"2015-7-31", location:"#{FFaker::Address.city}", price: 10000})
 Course.create({subject: "WDI", start_date:"2015-08-01", end_date:"2015-10-31", location:"#{FFaker::Address.city}", price: 10000})
 
