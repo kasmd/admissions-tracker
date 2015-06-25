@@ -23,6 +23,7 @@ class StudentsController < ApplicationController
 			session[:user_id] = @student.id
 			session[:user_type] = 'Student'
 			redirect_path = session[:redirect] || '/'
+			session[:redirect] = nil
 			redirect_to redirect_path
 		else
 			render :new
