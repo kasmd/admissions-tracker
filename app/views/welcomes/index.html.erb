@@ -4,7 +4,18 @@
 	<a href="/courses">View All Courses</a>
 </div>
 
-
+<div class="testimonials">
+	<% @randoms.each do |random| %> 
+		<div class="testimonial">
+			<blockquote>
+		  	<q>
+		  		We hired <%= FFaker::Name.first_name %> to help <%= FFaker::Company.bs %>
+		  	</q>
+		  <p>— <%= random[:name][:first].capitalize %> <%= random[:name][:last].capitalize %>, <%= FFaker::Company.name %>, <%= FFaker::Job.title %></p>
+		</blockquote>
+		</div>
+	<% end %>
+</div>
 
 
 
