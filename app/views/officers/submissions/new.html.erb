@@ -6,22 +6,41 @@
 	<%= f.radio_button(:q1, "2") %> 
 	<%= f.radio_button(:q1, "3") %> 
 	<%= f.radio_button(:q1, "4") %> 
-	<%= f.radio_button(:q1, "5") %> 
+	<%= f.radio_button(:q1, "5") %> <br>
 
 	<%= f.label(:q2, "Are they comfortable with breaking down a problem?") %> 
-	<%= f.text_field :q2 %> 
+	<%= f.radio_button(:q2, "1") %> 
+	<%= f.radio_button(:q2, "2") %> 
+	<%= f.radio_button(:q2, "3") %> 
+	<%= f.radio_button(:q2, "4") %> 
+	<%= f.radio_button(:q2, "5") %> <br>
 
-	<%= f.label(:q3, "Does the prospective student have critical thinking skills?") %> 
-	<%= f.text_field :q3  %> 
+
+	<%= f.label(:q3, "Does the prospective student have critical thinking skills?") %><%= f.radio_button(:q3, "1") %> 
+		<%= f.radio_button(:q3, "2") %> 
+		<%= f.radio_button(:q3, "3") %> 
+		<%= f.radio_button(:q3, "4") %> 
+		<%= f.radio_button(:q3, "5") %> <br>
+
 
 	<%= f.label(:q4, "Are they willing to collaborate with others?") %> 
-	<%= f.text_field :q4 %> 
-
+	<%= f.radio_button(:q4, "1") %> 
+	<%= f.radio_button(:q4, "2") %> 
+	<%= f.radio_button(:q4, "3") %> 
+	<%= f.radio_button(:q4, "4") %> 
+	<%= f.radio_button(:q4, "5") %> <br>
 
 	<%= f.label(:q5, "Will they adhere to the school's code of conduct?") %> 
-	<%= f.text_field :q5 %> 
+	<%= f.radio_button(:q5, "1") %> 
+	<%= f.radio_button(:q5, "2") %> 
+	<%= f.radio_button(:q5, "3") %> 
+	<%= f.radio_button(:q5, "4") %> 
+	<%= f.radio_button(:q5, "5") %> <br>
+
 
 	<%= f.submit %> 
+
+	<% end %> 
 
 <div>
 	<div id="timer">10:00</div>
