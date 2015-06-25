@@ -14,9 +14,25 @@
 
 <%# PHONE Results go here %>
 
-<%# INTERVIEW Results %>
 
+<% if @submission.status == 'pending-phone' %>  
 
+	<%= render 'shared/genericquestionnaire' %> 
+
+ <% elsif @submission.status  == 'rejected' || @submission.status == 'accepted'  %>
+
+ 	<%= render 'shared/genericquestionnaire' %> 
+
+		<% if @submission.course.subject == 'wdi' %> 
+				<%= render 'shared/wdiinperson' %> 
+		<% elsif @submission.course.subject == 'uxi' %> 
+				<%= render 'shared/uxiinperson' %> 
+		<% elsif @submission.course.subject == 'pmi'%> 
+				<%= render 'shared/pmiinperson' %> 
+		<% end %> 
+	
+	<%#  this is where you put the score and change the status!!!!! %> 
+<% end %> 
 
 
 <% if session[:user_type] == 'Instructor'%> 
