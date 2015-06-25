@@ -1,5 +1,4 @@
 <%= form_for @student, url: signup_path do |form| %>
-  <input type="hidden" name="referer" value="<%= @referer %>">
   <%= form.label :f_name, 'First Name:' %>
   <%= form.text_field :f_name, placeholder: 'John' %> <br>
   <%= form.label :l_name, 'Last Name:' %>
@@ -10,7 +9,7 @@
   <%= form.email_field :email, placeholder: 'john@example.com' %> <br>
   <%= form.label :password, 'Password:' %>
   <%= form.password_field :password %> <br>
-  <%= form.label :password_confirmation, "Confirm Password" %>
+  <%= form.label :password_confirmation, "Confirm Password:" %>
   <%= form.password_field :password_confirmation %>
   <%= form.submit 'SIGN UP' %>
 <% end %>
