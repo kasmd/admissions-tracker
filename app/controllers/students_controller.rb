@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 		@student = Student.new(student_params)
 		if @student.save
 			redirect_path = params[:redirect_path] || '/login'
-			redirect_to (redirect_path)
+			redirect_to redirect_path
 		else
 			render :new
 		end
