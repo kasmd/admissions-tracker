@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
   # end
 
   def authorize
-    session[:redirect] = request.path_info
     unless current_user
+      session[:redirect] = request.path_info
       redirect_to("/login") and return
     end
   end
