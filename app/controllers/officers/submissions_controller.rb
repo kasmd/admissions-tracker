@@ -16,9 +16,9 @@ module Officers
 		end 
 
 		def create
-			@submission = Submission.find(params[:submission_id])
+			@submission = Submission.find(params[:id])
 			phone = @submission.phones.new
-			if phone.update(params[:phone].permit(:q1))
+			if phone.update(params[:phone].permit(:q1, :q2, :q3, :q4, :q5, :notes))
 				redirect_to "/officers/submissions"
 			else
 				render :new
