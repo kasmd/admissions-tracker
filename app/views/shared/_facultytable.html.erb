@@ -14,11 +14,8 @@
           <td><%= sub.course.subject %></td>
           <td><%= sub.status %></td>
           <td><%= sub.updated_at.strftime('%m/%d/%y %I:%M %P') %></td>
-          <% if session[:user_type] == 'Officer' %> 
-          <td><a href="/officers/submissions/<%=sub.id%>">Application Details</a></td>
-          <% elsif session[:user_type] == 'Instructor' %> 
           <td><a href="/instructors/submissions/<%=sub.id%>">Application Details</a></td>
-          <% end %> 
+  
       </tr>      
      <% end %>
 </table>
