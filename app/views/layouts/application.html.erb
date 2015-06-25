@@ -7,11 +7,23 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+	<%= render 'shared/header_logo' %>
+	<nav class="float-right">
+		<% if current_user %>
+		<%= render 'shared/header_logged_in' %>
+		<% else %>
+		<%= render 'shared/header_public' %>
+		<% end %>
+	</nav>
+</header>
 
-<%= render 'shared/header' %>
+
 	<div class="container">
   	<%= yield %>
 	</div>
+
+
 <%= render 'shared/footer' %>
 
 </html>

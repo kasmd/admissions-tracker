@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-
-  resources :students, as: 'signup', only: [:new, :create]
+  get '/signup' => 'students#new'
+  post '/signup' => 'students#create'
   
+
   # resources :faculties, :students
 
   # resources :faculties do
@@ -30,5 +31,3 @@ Rails.application.routes.draw do
     end
 
 get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
-
-end 

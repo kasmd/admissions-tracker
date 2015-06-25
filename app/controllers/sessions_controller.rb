@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
 
 	def new
-		@referer = URI(request.referer).path
-		# referer url - store in hidden input
+		@redirect_path = params[:redirect_path]
 	end 
 
 	def create
@@ -14,9 +13,11 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
+			@redirect_path = params[:redirect_path] || "/#{user.type.downcase}s/submissions"
+
 			if session[:user_type]
-				redirect_to "/#{user.type.downcase}s/submissions"
-			else 
+				redirect_to @redirect_path
+			else
 				redirect_to "/"
 			end
 		else
@@ -27,7 +28,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to '/login'
+		redirect_to :back
 	end 
 
 end
