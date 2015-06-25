@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
 	def new
-		@redirect_path = params[:redirect_path]
 	end 
 
 	def create
@@ -13,10 +12,11 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
-			@redirect_path = session[:redirect] || "/#{user.type.downcase}s/submissions"
+			redirect_path = session[:redirect] || "/#{user.type.downcase}s/submissions"
+			session[:redirect] = nil
 
 			if session[:user_type]
-				redirect_to @redirect_path
+				redirect_to redirect_path
 			else
 				redirect_to "/"
 			end
@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
+		session[:redirect] = nil
 		redirect_to :back
 	end 
 
