@@ -1,10 +1,6 @@
 <h1>Login</h1>
 
 <%= form_tag '/login' do %> 
-	
-	<% if @redirect_path %>
-	<%= hidden_field_tag :redirect_path, @redirect_path %>
-	<% end %>
 
 	<%= label_tag :email %> 
 	<%= text_field_tag :email%> 
@@ -21,6 +17,6 @@
 	<p id="notice"><%= flash[:notice] %></p>
 
 <p>Don't have an account?</p>
-<a href="/signup?redirect_path=<%= @redirect_path %>">Sign Up</a>
+<a href="/signup">Sign Up</a>
 
 <!-- to include logout link in individual students page and individual faculty pages -->
