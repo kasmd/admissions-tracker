@@ -17,6 +17,6 @@ class Submission < ActiveRecord::Base
 	belongs_to :instructor
 	belongs_to :officer
 	belongs_to :course
-	has_one :phone
+	has_one :phonescreen
 	has_one :interview
 end

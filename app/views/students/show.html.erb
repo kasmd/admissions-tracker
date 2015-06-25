@@ -1,3 +1,6 @@
+<%# Do we need this page? - Kelly %> 
+
+
  <h1>Welcome, <%= @student.f_name %> <%= @student.l_name %></h1>
 
 
@@ -21,5 +24,3 @@
 <%elsif session[:user_type] == 'Officer' %> 
     <button>Office</button>
 <% end %> 
-
-<%= link_to 'Logout', logout_path, method: "DELETE" %> 

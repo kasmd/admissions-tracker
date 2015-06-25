@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625140113) do
+ActiveRecord::Schema.define(version: 20150625154407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.integer  "question_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "answers_surveys", force: :cascade do |t|
+    t.integer "survey_id"
+    t.integer "answer_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string  "subject"
@@ -35,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150625140113) do
     t.text     "notes"
   end
 
-  create_table "phones", force: :cascade do |t|
+  create_table "phonescreens", force: :cascade do |t|
     t.integer  "q1"
     t.integer  "q2"
     t.integer  "q3"
@@ -44,6 +57,12 @@ ActiveRecord::Schema.define(version: 20150625140113) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "notes"
+    t.integer  "submission_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "survey_id"
+    t.string  "body"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -52,11 +71,15 @@ ActiveRecord::Schema.define(version: 20150625140113) do
     t.string   "status"
     t.integer  "instructor_id"
     t.integer  "officer_id"
-    t.integer  "phone_id"
     t.integer  "interview_id"
     t.string   "application_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "phonescreen_id"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string "interview"
   end
 
   create_table "users", force: :cascade do |t|
