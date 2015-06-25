@@ -29,6 +29,6 @@ Rails.application.routes.draw do
       resources :submissions, only: [:index, :show]
     end
 
-
+get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
 
 end 

@@ -11,20 +11,21 @@ module Officers
 			@submission = Submission.find(params[:id])
 		end
 
-		def edit
-			@surveys = Survey.find(params[:id])
+		def new
+			@phone = Phone.new 
 		end 
 
-		def update
-			@surveys = Survey.find(params[:id])
-			#@surveys.whatever = params[:whatever]
-			if @surveys.save 
-				redirect_to "#"
-			else 
-				render :edit
+		def create
+			@phone = Phone.new
+			if @phone.update(params[:phone].permit(:q1))
+				binding.pry
+				redirect_to "/officers/submissions"
+			else
+				render :new
 			end 
 		end 
 
 
-	end
-end
+
+	end #class
+end #module 

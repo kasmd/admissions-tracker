@@ -1,0 +1,10 @@
+<h1>Phone Interview</h1>
+
+<%= form_for @phone do |form| %> 
+	<%= label_tag(:q1, "Does the prospective student have critical thinking skills?") %> 
+	<%= form.select :q1 [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %> 
+
+	<%= form.submit %> 
+
+
+<% end %> 
