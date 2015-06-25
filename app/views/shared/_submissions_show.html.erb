@@ -6,6 +6,8 @@
 <h3>Course Applied to: <%= @submission.course.subject %></h3>
 <h3>Status of Application: <%= @submission.status.capitalize %></h3>
 <h3>Last updated: <%= @submission.updated_at.strftime('%m/%d/%y %I:%M %P') %></h3>
+<%= image_tag gravatar_url(@submission.student.email, '100x100') %>
+
 
 <%# Render the application doc %>
 
