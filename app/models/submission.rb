@@ -24,7 +24,7 @@ class Submission < ActiveRecord::Base
     user_name = self.student.l_name + "-" + self.student.f_name
     file_name = Rails.root.join('public', 'uploads', 'applications', ("#{self.course_id}_" + user_name + '.txt'))
 
-    @application_file_name = file_name
+    self.application_file_name = file_name
     File.open(file_name, 'wt') do |file|
       file.write(attachment.read)
     end
@@ -40,6 +40,11 @@ class Submission < ActiveRecord::Base
 		else
 			self.status = "rejected"
 		end
+	end
+
+	def render_attachment
+		f = File.open(self.application_file_name)
+		f.read
 	end
 
 end

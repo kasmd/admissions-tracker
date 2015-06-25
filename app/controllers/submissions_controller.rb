@@ -22,7 +22,6 @@ class SubmissionsController < ApplicationController
       @submission = current_user.submissions.new(course_id: params[:course_id])
 
       @submission.save_attachment(params[:submission][:upload])
-
       if @submission.save
         redirect_to '/students/submissions'
       else
