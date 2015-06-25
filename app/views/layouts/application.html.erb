@@ -7,11 +7,25 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+	<div class="logo">
+		<img src="http://static1.squarespace.com/static/551d64a8e4b0eeef9d4c5e6e/t/551d7c50e4b0b4693e0b11c0/1434141915347/" alt="pied-piper">
+	</div>
+	<nav class="float-right">
+		<% if current_user %>
+		<%= render 'shared/header_logged_in' %>
+		<% else %>
+		<%= render 'shared/header_public' %>
+		<% end %>
+	</nav>
+</header>
 
-<%= render 'shared/header' %>
+
 	<div class="container">
   	<%= yield %>
 	</div>
+
+
 <%= render 'shared/footer' %>
 
 </html>
