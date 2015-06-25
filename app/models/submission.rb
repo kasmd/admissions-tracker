@@ -21,6 +21,7 @@ class Submission < ActiveRecord::Base
 	has_one :interview
 
 	def save_attachment(attachment)
+		
 	end
 
 end
