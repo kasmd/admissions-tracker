@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
 			session[:user_type] = user.type
 
-			@redirect_path = params[:redirect_path] || "/#{user.type.downcase}s/submissions"
+			@redirect_path = session[:redirect] || "/#{user.type.downcase}s/submissions"
 
 			if session[:user_type]
 				redirect_to @redirect_path
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to '/login'
+		redirect_to :back
 	end 
 
 end

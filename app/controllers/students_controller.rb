@@ -14,15 +14,16 @@ class StudentsController < ApplicationController
 	# end
 
 	def new
-		@redirect_path = params[:redirect_path]
 		@student = Student.new
 	end
 
 	def create
 		@student = Student.new(student_params)
 		if @student.save
-			redirect_path = params[:redirect_path] || '/login'
-			redirect_to (redirect_path)
+			session[:user_id] = @student.id
+			session[:user_type] = 'Student'
+			redirect_path = session[:redirect] || '/'
+			redirect_to redirect_path
 		else
 			render :new
 		end
@@ -31,7 +32,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:f_name, :l_name, :email, :phone_number, :password)
+    params.require(:student).permit(:f_name, :l_name, :email, :phone_number, :password, :password_confirmation)
   end
 
 end 

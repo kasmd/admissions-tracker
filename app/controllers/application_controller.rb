@@ -28,9 +28,9 @@ class ApplicationController < ActionController::Base
   # end
 
   def authorize
-    @redirect_path = request.path_info
+    session[:redirect] = request.path_info
     unless current_user
-      redirect_to("/login?redirect_path=#{@redirect_path}") and return
+      redirect_to("/login") and return
     end
   end
 
