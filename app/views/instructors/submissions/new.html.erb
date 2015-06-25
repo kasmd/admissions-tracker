@@ -1,0 +1,79 @@
+<h1>In-Person Interview</h1>
+
+<%= form_for [:instructors, @submission, @interview] do |f| %> 
+	<%= f.label(:q1, %> 
+		<% if @submission.course.subject == 'wdi' %> 
+			"What is your background?"
+		<% elsif @submission.course.subject == 'uxi' %> 
+				"What is your design background?" 
+		<% elsif @submission.course.subject == 'pmi'%> 
+				"What is your management background?"
+		<% end %> 
+	<% ) %>
+	<%= label :q1, '1' %> 
+	<%= f.radio_button(:q1, "1") %> 
+		<%= label :q1, '2' %> 
+	<%= f.radio_button(:q1, "2") %> 
+		<%= label :q1, '3' %> 
+	<%= f.radio_button(:q1, "3") %> 
+		<%= label :q1, '4' %> 
+	<%= f.radio_button(:q1, "4") %> 
+		<%= label :q1, '5' %> 
+	<%= f.radio_button(:q1, "5") %> <br>
+
+	<%= f.label(:q2, "Are they comfortable with breaking down a problem?") %> 
+<%= label :q1, '1' %> 
+	<%= f.radio_button(:q1, "1") %> 
+		<%= label :q1, '2' %> 
+	<%= f.radio_button(:q1, "2") %> 
+		<%= label :q1, '3' %> 
+	<%= f.radio_button(:q1, "3") %> 
+		<%= label :q1, '4' %> 
+	<%= f.radio_button(:q1, "4") %> 
+		<%= label :q1, '5' %> 
+	<%= f.radio_button(:q1, "5") %> <br>
+
+
+	<%= f.label(:q3, "How comfortable are you with learning technical language?") %><%= f.radio_button(:q3, "1") %> 
+	<%= label :q1, '1' %> 
+	<%= f.radio_button(:q1, "1") %> 
+		<%= label :q1, '2' %> 
+	<%= f.radio_button(:q1, "2") %> 
+		<%= label :q1, '3' %> 
+	<%= f.radio_button(:q1, "3") %> 
+		<%= label :q1, '4' %> 
+	<%= f.radio_button(:q1, "4") %> 
+		<%= label :q1, '5' %> 
+	<%= f.radio_button(:q1, "5") %> <br>
+
+
+	<%= f.label(:q4, "Are they willing to collaborate with others?") %> 
+<%= label :q1, '1' %> 
+	<%= f.radio_button(:q1, "1") %> 
+		<%= label :q1, '2' %> 
+	<%= f.radio_button(:q1, "2") %> 
+		<%= label :q1, '3' %> 
+	<%= f.radio_button(:q1, "3") %> 
+		<%= label :q1, '4' %> 
+	<%= f.radio_button(:q1, "4") %> 
+		<%= label :q1, '5' %> 
+	<%= f.radio_button(:q1, "5") %> <br>
+
+	<%= f.label(:q5, "Will they adhere to the school's code of conduct?") %> 
+	<%= label :q1, '1' %> 
+	<%= f.radio_button(:q1, "1") %> 
+		<%= label :q1, '2' %> 
+	<%= f.radio_button(:q1, "2") %> 
+		<%= label :q1, '3' %> 
+	<%= f.radio_button(:q1, "3") %> 
+		<%= label :q1, '4' %> 
+	<%= f.radio_button(:q1, "4") %> 
+		<%= label :q1, '5' %> 
+	<%= f.radio_button(:q1, "5") %> <br>
+	<%= f.label(:notes, "Notes") %> 
+	<%= f.text_area(:notes) %> <br>
+
+	<%= f.submit %> 
+
+	<% end %> 
+
