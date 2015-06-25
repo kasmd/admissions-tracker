@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   # resources :sessions, only: [:create, :new, :destroy]
 
   get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
-  
+  post '/officers/submissions/:id' => 'officers/submissions#create'
+
     resources :courses, only: [:index, :show] do
     			resources :submissions, only: [:create, :new]
     end 
