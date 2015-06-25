@@ -21,7 +21,14 @@ class Submission < ActiveRecord::Base
 	has_one :interview
 
 	def save_attachment(attachment)
-		
+    user_name = self.student.l_name + "-" + self.student.f_name
+    file_name = Rails.root.join('public', 'uploads', 'applications', ("#{self.course_id}_" + user_name + '.txt'))
+
+    @application_file_name = file_name
+    File.open(file_name, 'wt') do |file|
+      file.write(attachment.read)
+    end
+
 	end
 
 end
