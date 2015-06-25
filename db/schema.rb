@@ -16,19 +16,6 @@ ActiveRecord::Schema.define(version: 20150625154407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: :cascade do |t|
-    t.integer  "submission_id"
-    t.integer  "question_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "answers_surveys", force: :cascade do |t|
-    t.integer "survey_id"
-    t.integer "answer_id"
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string  "subject"
     t.date    "start_date"
@@ -60,11 +47,6 @@ ActiveRecord::Schema.define(version: 20150625154407) do
     t.integer  "submission_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.integer "survey_id"
-    t.string  "body"
-  end
-
   create_table "submissions", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "course_id"
@@ -76,10 +58,6 @@ ActiveRecord::Schema.define(version: 20150625154407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "phonescreen_id"
-  end
-
-  create_table "surveys", force: :cascade do |t|
-    t.string "interview"
   end
 
   create_table "users", force: :cascade do |t|
