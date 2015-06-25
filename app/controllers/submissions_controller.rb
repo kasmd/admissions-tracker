@@ -5,11 +5,8 @@ class SubmissionsController < ApplicationController
   before_action :students_only
 
   def new
-    current_users_course_ids = current_user.submissions.map do |sub|
-      sub.course_id
-    end
-    if current_users_course_ids.include?(params[:course_id].to_i)
-      redirect_to "/students/submissions/#{current_user.submissions.where(course_id: params[:course_id]).first.id}"
+    if current_user.has_already_submitted?(params[:course_id])
+      redirect_to "/students/submissions/#{current_user.this_submission_id(params[:course_id])}"
     else
       @submission = current_user.submissions.new(course_id: params[:course_id]) unless session[:user_id].nil?
     end
