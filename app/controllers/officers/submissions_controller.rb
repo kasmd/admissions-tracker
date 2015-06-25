@@ -17,10 +17,11 @@ module Officers
 		end 
 
 		def create
+
 			submission = Submission.find(params[:id])
 			submission.phonescreen = Phonescreen.new(params[:phonescreen].permit(:q1))
 			if submission.phonescreen.save
-				redirect_to "/officers/submissions"
+		redirect_to "/officers/submissions"
 
 			else
 				render :new
