@@ -16,9 +16,9 @@ module Officers
 		end 
 
 		def create
-			@phone = Phone.new
-			if @phone.update(params[:phone].permit(:q1))
-				binding.pry
+			@submission = Submission.find(params[:submission_id])
+			phone = @submission.phones.new
+			if phone.update(params[:phone].permit(:q1))
 				redirect_to "/officers/submissions"
 			else
 				render :new

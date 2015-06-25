@@ -16,12 +16,15 @@ Rails.application.routes.draw do
   # end 
 
   # resources :sessions, only: [:create, :new, :destroy]
+
+  get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
+  
     resources :courses, only: [:index, :show] do
     			resources :submissions, only: [:create, :new]
     end 
 
     namespace :officers do
-      resources :submissions, only: [:index, :show, :edit, :update]
+      resources :submissions, only: [:index, :show, :edit, :update, :new, :create]
     end
     namespace :instructors, only: [:show] do
       resources :submissions, only: [:index, :show, :edit, :update]
@@ -30,4 +33,7 @@ Rails.application.routes.draw do
       resources :submissions, only: [:index, :show]
     end
 
-get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
+
+
+
+end 
