@@ -9,11 +9,7 @@ module Officers
 
 		def show
 			@submission = Submission.find(params[:id])
-<<<<<<< HEAD
 			render :partial => '/shared/submissions_show'
-=======
-			binding.pry
->>>>>>> 2f689668f6cc1dc33eab31954381a4d1373e5145
 		end
 
 		def new
