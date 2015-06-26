@@ -121,3 +121,18 @@ table, th, td {
 th, td {
     padding: 5px;
 }
+
+#search {
+	display: block;
+	margin: 10px auto;
+	width: 200px;
+	padding: 10px;
+	border-radius: 6px;
+	outline: none;
+	border: 1px solid grey;
+}
+
+#search:focus {
+	outline: none;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}

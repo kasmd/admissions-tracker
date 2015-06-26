@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623233141) do
+ActiveRecord::Schema.define(version: 20150625184554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.integer  "submission_id"
-    t.integer  "question_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "answers_surveys", force: :cascade do |t|
-    t.integer "survey_id"
-    t.integer "answer_id"
-  end
 
   create_table "courses", force: :cascade do |t|
     t.string  "subject"
@@ -37,27 +24,41 @@ ActiveRecord::Schema.define(version: 20150623233141) do
     t.decimal "price"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.integer "survey_id"
-    t.string  "body"
+  create_table "interviews", force: :cascade do |t|
+    t.integer  "q1"
+    t.integer  "q2"
+    t.integer  "q3"
+    t.integer  "q4"
+    t.integer  "q5"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "notes"
+    t.integer  "submission_id"
+  end
+
+  create_table "phonescreens", force: :cascade do |t|
+    t.integer  "q1"
+    t.integer  "q2"
+    t.integer  "q3"
+    t.integer  "q4"
+    t.integer  "q5"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "notes"
+    t.integer  "submission_id"
   end
 
   create_table "submissions", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "course_id"
-    t.string   "status",            default: "pending-phone"
+    t.string   "status",                default: "pending-phone"
     t.integer  "instructor_id"
     t.integer  "officer_id"
+    t.integer  "interview_id"
+    t.string   "application_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-  end
-
-  create_table "surveys", force: :cascade do |t|
-    t.string "interview"
+    t.integer  "phonescreen_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,5 +71,7 @@ ActiveRecord::Schema.define(version: 20150623233141) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

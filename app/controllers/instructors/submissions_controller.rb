@@ -9,6 +9,29 @@ module Instructors
 
 		def show
 			@submission = Submission.find(params[:id])
+			render :partial => '/shared/submissions_show'
+		end
+
+		def new
+			@submission = Submission.find(params[:id])
+			@interview = Interview.new(submission_id: params[:id])
+		end
+
+		def create
+			submission = Submission.find(params[:id])
+			submission.interview = Interview.new(interview_params)
+			if submission.interview.save
+				binding.pry
+				redirect_to "/instructors/submissions"
+			else
+				render :new
+			end
+		end
+
+		private
+
+		def interview_params
+			params.require(:interview).permit(:q1, :q2, :q3, :q4, :q5, :notes)
 		end
 
 	end #class

@@ -3,34 +3,51 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # FUN TIP: current_user is what's up
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end 
+  end
+
+  # FUN TIP: you can access this helper method in a view
 
   helper_method :current_user
 
+  # These could be useful? 
+
+  # def student?
+  #   session[:user_type] == 'Student'
+  # end
+
+  # def instructor?
+  #   session[:user_type] == 'Instructor'
+  # end
+
+  # def officer?
+  #   session[:user_type] == 'Officer'
+  # end
+
   def authorize
-    redirect_to '/login' unless current_user
-  end 
+    unless current_user
+      session[:redirect] = request.path_info
+      redirect_to("/login") and return
+    end
+  end
 
   def instructors_only
-    authorize
-    if session[:user_type] != 'Instructor'
+    if authorize && session[:user_type] != 'Instructor'
       render status: :forbidden
     end
   end
 
   def students_only
-    authorize
-    if session[:user_type] != 'Student'
+    if authorize && session[:user_type] != 'Student'
       render status: :forbidden
     end
   end
 
   def officers_only
-    authorize
-    if session[:user_type] != 'Officer'
+    if authorize && session[:user_type] != 'Officer'
       render status: :forbidden
     end
   end

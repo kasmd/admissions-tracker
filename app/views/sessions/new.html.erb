@@ -1,18 +1,22 @@
 <h1>Login</h1>
 
 <%= form_tag '/login' do %> 
-	
+
 	<%= label_tag :email %> 
 	<%= text_field_tag :email%> 
 
 	<%= label_tag :password %> 
 	<%= password_field_tag :password%> 
 
-	<%= submit_tag %> 
+	<%= submit_tag "Log In" %> 
 
 <% end %>
+
 	
 	<p id="error"><%= flash[:error] %></p>
 	<p id="notice"><%= flash[:notice] %></p>
+
+<p>Don't have an account?</p>
+<a href="/signup">Sign Up</a>
 
 <!-- to include logout link in individual students page and individual faculty pages -->
