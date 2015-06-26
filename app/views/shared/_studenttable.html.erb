@@ -4,6 +4,7 @@
     <th>Course</th>		
     <th>Status</th>
     <th>Last Updated</th>
+    <th>Details</th>
   </tr>
   	<% @submissions.each do |sub |%>
 		  <tr>
@@ -11,6 +12,7 @@
 			    <td><%= sub.course.subject %></td>
 			    <td><%= sub.status %></td>
 			    <td><%= sub.updated_at.strftime('%m/%d/%y %I:%M %P') %></td>
+			    <td><a href="/students/submissions/<%= sub.id %>">Application Details</a></td>
 		  </tr>      
 	   <% end %>
 </table>
