@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var $rows = $('tbody tr');
+	var $rows = $('tbody .results-row');
 	$('#search').keyup(function() {
 			var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 			console.log(val);

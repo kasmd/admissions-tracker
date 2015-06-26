@@ -8,7 +8,6 @@ module Students
 		end
 
 		def show
-			
 		end
 
 	end #class
