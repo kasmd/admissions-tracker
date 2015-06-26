@@ -1,19 +1,5 @@
 /*----- All ------*/
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
-html {
-	min-height: 100%;
-	position: relative;
-}
-
-body {
-	margin: 0 0 75px;
-	font-family: 'Ubuntu', sans-serif; 
-}
-
-.container {
-	min-height: 500px;
-}
 
 .float-right {
 	float: right;
@@ -27,23 +13,28 @@ body {
 
 header {
 	padding: 0 10px;
-	height: 75px;
-	background-color: #eee
+	background-color: #eee; 
+	position: relative;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.logo {
+	padding: 0.5em;
 }
 
-nav li {
-	display: inline-block;
+nav {
+	position: absolute;
+	top: 50%;
+	right: 2em;
+	transform: translateY(-50%);
+}
+
+nav .button {
+	margin-bottom: 0; 
 }
 
 .logo img {
-	width: 50px;
-	height: 50px;
+	width: 3.5em;
+	height: 3.5em;
 }
 
 .logo {
@@ -56,10 +47,21 @@ footer {
 	position: absolute;
 	left: 0;
 	bottom:0;
-	height: 75px;
 	width: 100%;
-	background-color: blue;
+	background-color: #eee; 
 }
+
+/*#trello {
+	border-radius: 15%; 
+}*/
+
+.social-links img {
+	height: 2em; 
+	width: 2em;
+	margin: 1em; 
+	border-radius: 50%;
+}
+
 
 .site-footer {
 	text-align: center;
@@ -67,7 +69,6 @@ footer {
 
 footer a {
 	color: white;
-	padding: 5px;
 }
 
 /*----- Public ------*/
@@ -153,4 +154,12 @@ th, td {
 #search:focus {
 	outline: none;
 	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+/*NEW CHANGES*/
+
+.login {
+	text-align: center; 
+
 }
