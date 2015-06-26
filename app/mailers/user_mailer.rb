@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default :from => 'admin@kasmd.com'
+	default :from => 'admin@admitron.com'
 
   def welcome_email(user,course)
     @user = user
@@ -11,6 +11,6 @@ class UserMailer < ApplicationMailer
   def welcome_user(user)
   	@user = user
   	@url  = 'http://localhost:3000/'
-  	mail(to: @user.email, subject: 'Welcome to KASMD Assembly!')
+  	mail(to: @user.email, subject: 'Welcome to AdmiTron5000!')
   end
 end

@@ -1,14 +1,14 @@
 <h1>All Courses</h1>
 <div class="course-list">
 	<% @courses.each do |course| %>
-	<a href="/courses/<%= course.id %>">
-		<div class="course">
-			<h3><%= course.subject %></h3>
-			<ul class="float-right">
-				<li><%= course.start_date.strftime("%a, %e %b") %></li>
-				<li><%= course.location %></li>
-			</ul>
-		</div>
-	</a>
+		<a href="/courses/<%= course.id %>">
+			<div class="course">
+				<h3><%= course.subject %></h3>
+				<ul class="float-right">
+					<li><%= course.start_date.strftime("%a, %e %b") %></li>
+					<li><%= course.location %></li>
+				</ul>
+			</div>
+		</a>
 	<% end %>
 </div>
