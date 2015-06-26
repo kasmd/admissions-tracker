@@ -3,8 +3,12 @@ module Instructors
 	class InterviewsController < ApplicationController 
 
 		def new
-			@submission = Submission.find(params[:submission_id])
-			@interview = Interview.new(submission_id: params[:id])
+			@submission = Submission.find_by(id: params[:submission_id])
+			if @submission.nil? || @submission.status != 'pending-in-person' 
+				redirect_to "/#{current_user.type_path}/submissions" and return
+			else 
+				@interview = Interview.new(submission_id: params[:id])
+			end 
 		end
 
 		def create

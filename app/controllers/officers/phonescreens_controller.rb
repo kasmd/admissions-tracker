@@ -3,9 +3,14 @@ module Officers
 	class PhonescreensController < ApplicationController 
 
 		def new
-			@submission = Submission.find(params[:submission_id])
-			@phonescreen = Phonescreen.new(submission_id: params[:submission_id])
-		end 
+			@submission = Submission.find_by(id: params[:submission_id])
+			if @submission.nil? || @submission.status != 'pending-phone' 
+				redirect_to "/#{current_user.type_path}/submissions" and return
+			else 
+				@phonescreen = Phonescreen.new(submission_id: params[:id])
+			end 
+		end
+
 
 		def create
 			submission = Submission.find(params[:submission_id])
