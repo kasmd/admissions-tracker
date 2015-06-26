@@ -4,8 +4,6 @@ $(document).ready(
 			function(){
 				if ($(this).val()) {
 					$('#app-submit').attr('disabled',false);
-					// or, as has been pointed out elsewhere:
-					// $('input:submit').removeAttr('disabled'); 
 				}
 			}
 		);

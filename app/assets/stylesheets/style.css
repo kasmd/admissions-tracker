@@ -79,6 +79,24 @@ h1 {
 	text-align: center;
 }
 
+.testimonial {
+	width: 32%;
+	height: 275px;
+	margin: 0 5px;
+	background-color: #eee;
+	float: left;
+	text-align: center;
+
+}
+
+.reference {
+	margin: 5px auto;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 100px;
+  height: 100px;
+}
+
 /*----- Courses ------*/
 .course-list {
 	width: 900px;
