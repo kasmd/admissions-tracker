@@ -1,7 +1,4 @@
 <style>
-table {
-	width:100%;
-}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -11,19 +8,21 @@ th, td {
 }
 </style>
 
-<table>
+<table style="width:100%">
   <tr>
     <th>Application Number</th>
     <th>Course</th>		
     <th>Status</th>
     <th>Last Updated</th>
+    <th>Details</th>
   </tr>
   	<% @submissions.each do |sub |%>
 		  <tr>
 			    <td><%= sub.id %></td>
 			    <td><%= sub.course.subject %></td>
 			    <td><%= sub.status %></td>
-			    <td><%= sub.updated_at.strftime("%F at %H:%M") %></td>
+			    <td><%= sub.updated_at %></td>
+			    <td><a href="submissions/<%=sub.id%>">Application Details</a></td>
 		  </tr>      
 	   <% end %>
 </table>
