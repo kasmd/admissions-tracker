@@ -9,7 +9,6 @@ module Instructors
 
 		def show
 			@submission = Submission.find(params[:id])
-			render :partial => '/shared/submissions_show'
 		end
 
 		def new
