@@ -9,7 +9,7 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => 'kasmd.com',
   :authentication => :plain, 
-  :user_name => 'samuelhuxiali',
-  :password => '19880727hu',
+  :user_name => '',
+  :password => '',
   :enable_starttls_auto => true
 }
