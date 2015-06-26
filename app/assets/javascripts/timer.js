@@ -34,10 +34,12 @@ window.addEventListener("load", function() {
 
 	var startCountdown = function() {
 		// getTime();
+		start.disabled = true;
 		timerInterval = window.setInterval(countdown, 1000);
 	};
 
 	var stopCountdown = function() {
+		start.disabled = false;
 		window.clearInterval(timerInterval);
 	};
 	if (timer && start && stop && reset) {
@@ -48,5 +50,5 @@ window.addEventListener("load", function() {
 			time = 600;
 			timer.textContent = "10:00";
 		});
-	};
+	}
 });
