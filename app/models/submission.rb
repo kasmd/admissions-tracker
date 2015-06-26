@@ -43,7 +43,14 @@ class Submission < ActiveRecord::Base
 	end
 
 	def interview_change_status
-		# add to this
+		scores = self.interview
+		total = scores.q1.to_i + scores.q2.to_i + scores.q2.to_i + scores.q3.to_i + scores.q4.to_i + scores.q5.to_i
+		if total > 13
+			self.status = "accepted"
+			self.save
+		else
+			self.status = "rejected"
+		end
 	end
 
 	def has_attachment
