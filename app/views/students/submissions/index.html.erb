@@ -1,4 +1,4 @@
-<h1>Hello <%= @submissions.first.student.f_name %> <%= @submissions.first.student.l_name %></h1>
+<h1>Hello <%= current_user.f_name %> <%= current_user.l_name %></h1>
 
 
 <%= render 'shared/studenttable' %>
