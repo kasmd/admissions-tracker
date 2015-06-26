@@ -10,7 +10,7 @@
 <header>
 	<%= render 'shared/header_logo' %>
 	<nav class="float-right">
-		<% if current_user %>
+		<% if session[:user_type] %>
 		<%= render 'shared/header_logged_in' %>
 		<% else %>
 		<%= render 'shared/header_public' %>

@@ -9,9 +9,7 @@
 		<div class="testimonial">
 			<img class="reference" src="<%= random["user"]["picture"]["thumbnail"] %>">
 			<blockquote>
-		  	<q>
-		  		We hired <%= FFaker::Name.first_name %> to help <%= FFaker::Company.bs %>
-		  	</q>
+		  	<q>We hired <%= FFaker::Name.first_name %> to help <%= FFaker::Company.bs %>.</q/>
 		  <p>— <%= random["user"]["name"]["first"].capitalize %> <%= random["user"]["name"]["last"].capitalize %>, <%= FFaker::Company.name %>, <%= FFaker::Job.title %></p>
 		</blockquote>
 		</div>
