@@ -13,32 +13,41 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def authorize
+  def authorized?
     if current_user 
-    true
-    else  
+      true
+    else
       session[:redirect] = request.path_info
-      redirect_to("/login") and return
+      false
     end
   end
 
+  def redirect_login
+      redirect_to("/login") and return
+  end
+
   def instructors_only
-    if authorize.nil? || session[:user_type] != 'Instructor'
-      redirect_to "/" and return
+    if !authorized?
+      redirect_login
+    elsif session[:user_type] != 'Instructor'
+      redirect_to '/' and return
     end
   end
 
   def students_only
-    if authorize.nil? || session[:user_type] != 'Student'
-      redirect_to "/" and return
+    if !authorized?
+      redirect_login
+    elsif session[:user_type] != 'Student'
+      redirect_to '/' and return
     end
   end
 
   def officers_only
-    if authorize.nil? || session[:user_type] != 'Officer'
-     redirect_to "/" and return
+    if !authorized?
+      redirect_login
+    elsif session[:user_type] != 'Officer'
+      redirect_to '/' and return
     end
-
   end
 
 end
