@@ -13,6 +13,8 @@
           <td><%= sub.student.l_name %>, <%= sub.student.f_name %></td>
           <td><%= sub.course.subject %></td>
           <td><%= sub.status %></td>
+          <td><%= sub.updated_at.strftime('%m/%d/%y %I:%M %P') %></td>
+          <td><a href="/<%= current_user.type_path %>/submissions/<%=sub.id%>">Application Details</a></td>
       </tr>      
      <% end %>
 </table>
