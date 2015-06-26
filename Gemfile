@@ -43,6 +43,7 @@ group :development, :test do
 	gem 'randomuser-local-rails', require: 'randomuser_local'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'sendgrid'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
