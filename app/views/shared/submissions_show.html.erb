@@ -6,26 +6,23 @@
 <%= image_tag gravatar_url(@submission.student.email, '100x100') %>
 
 
-<%# Render the application doc %>
 <div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
 
 
 <% if @submission.phonescreen %>  
-
 	<%= render 'shared/genericquestionnaire' %> 
 <% end %> 
 
-	<% if @submission.interview %> 
+<% if @submission.interview %> 
 
-		<% if @submission.course.subject == 'WDI' %> 
-				<%= render 'shared/wdiinperson' %> 
-		<% elsif @submission.course.subject == 'UXI' %> 
-				<%= render 'shared/uxiinperson' %> 
-		<% elsif @submission.course.subject == 'PMI'%> 
-				<%= render 'shared/pmiinperson' %> 
-		<% end %> 
+	<% if @submission.course.subject == 'WDI' %> 
+			<%= render 'shared/wdiinperson' %> 
+	<% elsif @submission.course.subject == 'UXI' %> 
+			<%= render 'shared/uxiinperson' %> 
+	<% elsif @submission.course.subject == 'PMI'%> 
+			<%= render 'shared/pmiinperson' %> 
+	<% end %> 
 	
-	<%#  this is where you put the score and change the status!!!!! %> 
 <% end %> 
 
 
