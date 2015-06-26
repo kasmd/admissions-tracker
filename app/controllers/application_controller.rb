@@ -13,43 +13,32 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  # These could be useful? 
-
-  # def student?
-  #   session[:user_type] == 'Student'
-  # end
-
-  # def instructor?
-  #   session[:user_type] == 'Instructor'
-  # end
-
-  # def officer?
-  #   session[:user_type] == 'Officer'
-  # end
-
   def authorize
-    unless current_user
+    if current_user 
+    true
+    else  
       session[:redirect] = request.path_info
       redirect_to("/login") and return
     end
   end
 
   def instructors_only
-    if authorize && session[:user_type] != 'Instructor'
-      render status: :forbidden
+    if authorize.nil? || session[:user_type] != 'Instructor'
+      redirect_to "/" and return
     end
   end
 
   def students_only
-    if authorize && session[:user_type] != 'Student'
-      render status: :forbidden
+    if authorize.nil? || session[:user_type] != 'Student'
+      redirect_to "/" and return
     end
   end
 
   def officers_only
-    if authorize && session[:user_type] != 'Officer'
-      render status: :forbidden
+    if authorize.nil? || session[:user_type] != 'Officer'
+     redirect_to "/" and return
     end
+
   end
 
 end

@@ -9,13 +9,8 @@ module Officers
 
 		def show
 			@submission = Submission.find(params[:id])
-			render :partial => '/shared/submissions_show'
+			render :'/shared/submissions_show'
 		end
-
-		def new
-			@submission = Submission.find(params[:id])
-			@phonescreen = Phonescreen.new(submission_id: params[:id])
-		end 
 
 		def create
 			submission = Submission.find(params[:id])

@@ -1,6 +1,3 @@
-<%# render submissions_show partial here %>
-
-
 <h1><%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
 
 <h3>Course Applied to: <%= @submission.course.subject %></h3>
@@ -13,13 +10,12 @@
 <div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
 
 
-<% if @submission.status == 'pending-in-person' %>  
+<% if @submission.phonescreen %>  
 
 	<%= render 'shared/genericquestionnaire' %> 
+<% end %> 
 
- <% elsif @submission.status  == 'rejected' || @submission.status == 'accepted'  %>
-
- 	<%= render 'shared/genericquestionnaire' %> 
+	<% if @submission.interview %> 
 
 		<% if @submission.course.subject == 'WDI' %> 
 				<%= render 'shared/wdiinperson' %> 
@@ -34,9 +30,10 @@
 
 
 <% if session[:user_type] == 'Instructor' && @submission.status == 'pending-in-person' %> 
-  <a href="/instructors/submissions/<%= @submission.id %>/interview/new"><button>Start In-Person Interview</button></a>		
+  <a href="/instructors/submissions/<%= @submission.id %>/interviews/new"><button>Start In-Person Interview</button></a>		
 <% elsif session[:user_type] == 'Officer' && @submission.status == 'pending-phone' %> 
-  <a href="/officers/submissions/<%= @submission.id %>/phonescreen/new"><button>Start Phone Interview</button></a>		
+  <a href="/officers/submissions/<%= @submission.id %>/phonescreens/new"><button>Start Phone Interview</button></a>		
 <% end %> 
+
 
 

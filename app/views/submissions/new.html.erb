@@ -1,6 +1,7 @@
 <h1>Apply for a Course</h1>
 
 <%= form_for [@student, @submission], url: course_submissions_path do|f| %>
-	<%= f.file_field :upload %>
-	<%= f.submit "Apply!" %>
+	<%= label :upload, 'Upload your resume as a text file:' %> <br>
+	<%= f.file_field :upload %> <br>
+	<%= f.submit "Apply!" , disabled: true, id: 'app-submit'%>
 <% end %>

@@ -1,6 +1,6 @@
 <h1>In-Person Interview</h1>
 
-<%= form_for Interview.new, :url => {:action => :create, :controller => :"instructors/submissions"} do |f| %> 
+<%= form_for [:instructors, @submission, @interview] do |f| %> 
 	<%= f.label(:q1, %> 
 		<% if @submission.course.subject == 'WDI' %> 
 			<%= "What is your background?" %>

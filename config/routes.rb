@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get '/signup' => 'students#new'
   post '/signup' => 'students#create'
 
-  get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
-  post '/officers/submissions/:id' => 'officers/submissions#create'
+  # get '/officers/submissions/:id/phonescreen/new' => 'officers/submissions#new'
+  # post '/officers/submissions/:id' => 'officers/submissions#create'
 
-  get '/instructors/submissions/:id/interview/new' => 'instructors/submissions#new'
-  post '/instructors/submissions/:id' => 'instructors/submissions#create'
+  # get '/instructors/submissions/:id/interview/new' => 'instructors/submissions#new'
+  # post '/instructors/submissions/:id' => 'instructors/submissions#create'
 
 
     resources :courses, only: [:index, :show] do
@@ -20,18 +20,18 @@ Rails.application.routes.draw do
     end 
 
     namespace :officers do
-      resources :submissions, only: [:index, :show, :edit, :update, :new, :create] do
-        resources :phonescreens
+      resources :submissions, only: [:index, :show, :new, :create] do
+        resources :phonescreens, only: [:new, :create]
       end
     end
 
     namespace :instructors do
-      resources :submissions, only: [:index, :show, :edit, :update, :new, :create] do
-        resources :interview
+      resources :submissions, only: [:index, :show, :new, :create] do
+        resources :interviews, only: [:new, :create, :show]
       end 
     end
 
-    namespace :students, only: [:show] do
+    namespace :students do
       resources :submissions, only: [:index, :show]
     end
 

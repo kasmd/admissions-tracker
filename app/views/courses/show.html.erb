@@ -1,7 +1,7 @@
 <h1><%= @course.subject %></h1>
 <ul>
-	<li>First Day of Class: <%= @course.start_date %></li>
-	<li>Last Day of Class: <%= @course.end_date %></li>
+	<li>First Day of Class: <%= @course.start_date.strftime("%a, %b %e") %></li>
+	<li>Last Day of Class: <%= @course.end_date.strftime("%a, %b %e") %></li>
 	<li>Location: <%= @course.location %></li>
 	<li>Price: $<%= '%.2f' % @course.price %></li>
 </ul>
