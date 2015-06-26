@@ -1,10 +1,10 @@
 # Admissions Tracker
 
 This project is an Admissions Tracker built using Ruby on Rails. This was a collaborative effort by:
-[Max Peterson](https://github.com/maxrpeterson)
-[Anila Alexander](https://github.com/anilajalex)
-[Dor Rubin](https://github.com/dorrubin)
-[Sam Hu](https://github.com/samuelhuxiali)
+[Max Peterson](https://github.com/maxrpeterson), 
+[Anila Alexander](https://github.com/anilajalex), 
+[Dor Rubin](https://github.com/dorrubin), 
+[Sam Hu](https://github.com/samuelhuxiali), and 
 [Kelly Devine](https://github.com/KellyD813)
 
 ## Features
