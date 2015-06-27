@@ -1,14 +1,36 @@
-<h1>All Courses</h1>
-<div class="course-list">
+<div class="courses">
+	<h1>Courses</h1>
+
+
 	<% @courses.each do |course| %>
-		<a href="/courses/<%= course.id %>">
-			<div class="course">
-				<h3><%= course.subject %></h3>
-				<ul class="float-right">
-					<li><%= course.start_date.strftime("%a, %e %b") %></li>
-					<li><%= course.location %></li>
-				</ul>
-			</div>
-		</a>
+		<div class="course">
+			<a href="/courses/<%= course.id %>">
+				<% if course.subject == "WDI" %>
+					<div class="course-logo"><img src="/images/wdi-logo.png"></div>
+					<div class="course-description">
+						<h3>Web Development Immersive</h3>
+						<p>12-weeks. All day, everyday. Learn the skills to become an entry-lecel web developer and the resources to get a job in this intensive program.</p>
+					</div>
+				<% elsif course.subject == "PMI" %>
+					<div class="course-logo"><img src="/images/pmi-logo.png"></div>
+					<div class="course-description">
+						<h3>Product Management Immersive</h3>
+						<p>The Product Management Immersive program is crafted by top practitioners in the field, with a specific focus on helping you transition into a PM career.</p>
+					</div>
+				<% elsif course.subject == "UXI" %>
+					<div class="course-logo"><img src="/images/uxi-logo.png"></div>
+					<div class="course-description">
+						<h3>User Experience Design Immersive</h3>
+						<p>Ten weeks. All day. Monday through Friday. Learn the skills of a US designer and put them to work while building a comprehensive portfolio.</p>
+					</div>
+				<% end %>
+				<div class="course-info">
+					<h4>Course Info</h4>
+					<p>Start date: <%= course.start_date.strftime("%a, %e %b") %></p>
+					<p>Location: <%= course.location %></p>
+				</div>
+			</a>
+		</div>
 	<% end %>
+
 </div>
