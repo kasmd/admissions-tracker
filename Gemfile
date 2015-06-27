@@ -32,18 +32,20 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 #RandomUser gem
+gem 'randomuser'
+gem 'randomuserme'
+gem 'randomuser-local-rails', require: 'randomuser_local'
+
+gem 'ffaker'
+gem 'sendgrid'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'annotate'
-  gem 'ffaker'
-  gem 'randomuserme'
-	gem 'randomuser'
-	gem 'randomuser-local-rails', require: 'randomuser_local'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'sendgrid'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
