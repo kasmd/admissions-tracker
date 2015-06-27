@@ -12,6 +12,8 @@
 #  updated_at    :datetime
 #
 
+require 'digest'
+
 class Submission < ActiveRecord::Base
 	belongs_to :student
 	belongs_to :instructor
@@ -21,8 +23,9 @@ class Submission < ActiveRecord::Base
 	has_one :interview
 
 	def save_attachment(attachment)
+		s3 = Aws::S3::Client.new
+		file_key = attachment.original
     user_name = self.student.l_name + "-" + self.student.f_name
-    file_name = Rails.root.join('public', 'uploads', 'applications', ("#{self.course_id}_" + user_name + '.txt'))
 
     self.application_file_name = file_name
     File.open(file_name, 'wt') do |file|

@@ -38,7 +38,8 @@ gem 'randomuser-local-rails', require: 'randomuser_local'
 
 gem 'ffaker'
 gem 'sendgrid'
-gem 'httparty'
+
+gem 'aws-sdk'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
