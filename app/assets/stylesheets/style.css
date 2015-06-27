@@ -174,29 +174,31 @@ th, td {
 /*NEW CHANGES*/
 
 .login {
-	text-align: center; 
-}
-
-
-.signup {
 	width: 25%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 2em;
 	font-size: 1em;
 }
-.signup h3 {
+.login h3 {
 	font-style: boldest;
 }
 
-.signup input {
+.login input {
 	width: 100%;
 	display: inline-block;
 }
 
-.signup input[type="submit"] {
+.login input[type="submit"] {
 	background-color: #e74c3c;
 	color: white;
+	border: #e74c3c;
+}
+
+.no-account {
+	border: solid #D1D1D1 1px;
+	padding: 1em;
+	text-align: center;
 }
 
 
