@@ -18,7 +18,7 @@ header {
 }
 
 .logo {
-	padding: 0.5em;
+	padding: 0.25em;
 }
 
 nav {
@@ -51,15 +51,29 @@ footer {
 	background-color: #eee; 
 }
 
-/*#trello {
-	border-radius: 15%; 
-}*/
+#trello {
+	margin-left: 2em; 
+}
+
+.footer {
+	position: relative;
+}
 
 .social-links img {
 	height: 2em; 
 	width: 2em;
-	margin: 1em; 
+	margin: .5em;
 	border-radius: 50%;
+
+
+}
+
+.admitron {
+	position: absolute;
+	top: 50%;
+	right: 2em;
+	transform: translateY(-50%);
+	height: 4em;
 }
 
 
