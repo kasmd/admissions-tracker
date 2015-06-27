@@ -12,8 +12,6 @@
 #  updated_at    :datetime
 #
 
-require 'digest'
-
 class Submission < ActiveRecord::Base
 	belongs_to :student
 	belongs_to :instructor
@@ -24,14 +22,14 @@ class Submission < ActiveRecord::Base
 
 	def save_attachment(attachment)
 		s3 = Aws::S3::Client.new
-		file_key = attachment.original
-    user_name = self.student.l_name + "-" + self.student.f_name
+    user_name = self.student.l_name + "-" + self.student.f_name + "_"
 
-    self.application_file_name = file_name
-    File.open(file_name, 'wt') do |file|
-      file.write(attachment.read)
-    end
+    file_key = user_name + self.course_id.to_s + "_application" + File.extname(attachment.original_filename)
 
+    self.application_file_name = file_key
+
+  	s3.put_object(bucket: 'admitron5000', key: file_key, body: attachment)
+    
 	end
 	
 	def phone_change_status
@@ -61,7 +59,9 @@ class Submission < ActiveRecord::Base
 	end
 
 	def render_attachment
-		f = File.open(self.application_file_name)
+		s3 = Aws::S3::Client.new
+		file_key = self.application_file_name
+		f = s3.get_object(bucket: 'admitron5000', key: file_key).body
 		f.read
 	end
 
