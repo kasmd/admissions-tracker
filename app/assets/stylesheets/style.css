@@ -113,7 +113,7 @@ h1 {
 }
 
 /*----- Courses ------*/
-.course-list {
+/*.course-list {
 	width: 900px;
 	margin: 0 auto;
 }
@@ -127,20 +127,20 @@ div.course {
 
 div.course:hover {
 	background: #eee;
-}
+}*/
 
 .course h3 {
 	display: inline-block;
 }
 
-.course ul {
+/*.course ul {
 	list-style: none;
 	padding: 0;
 }
 
 .course li {
 	margin: 0 0 1em 0;
-}
+}*/
 
 /*----- Submission Table ------*/
 
@@ -175,5 +175,29 @@ th, td {
 
 .login {
 	text-align: center; 
-
 }
+
+
+.signup {
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	font-size: 1em;
+}
+.signup h3 {
+	font-style: boldest;
+}
+
+.signup input {
+	width: 100%;
+	display: inline-block;
+}
+
+.signup input[type="submit"] {
+	background-color: #e74c3c;
+	color: white;
+}
+
+
+
