@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     end 
 
     namespace :officers do
-      root 'submissions#index'
 
       resources :submissions, only: [:index, :show, :new, :create] do
         resources :phonescreens, only: [:new, :create]
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
     end
 
     namespace :instructors do
-      root 'submissions#index'
+
       
       resources :submissions, only: [:index, :show, :new, :create] do
         resources :interviews, only: [:new, :create, :show]
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
     end
 
     namespace :students do
-      root 'submissions#index'
+
       
       resources :submissions, only: [:index, :show]
     end

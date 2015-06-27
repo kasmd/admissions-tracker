@@ -1,9 +1,18 @@
-<h1><%= @course.subject %></h1>
-<ul>
-	<li>First Day of Class: <%= @course.start_date.strftime("%a, %b %e") %></li>
-	<li>Last Day of Class: <%= @course.end_date.strftime("%a, %b %e") %></li>
-	<li>Location: <%= @course.location %></li>
-	<li>Price: $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %></li>
-</ul>
+<% if @course.subject == "WDI" %>
+	<h1>Web Development Immersive</h1>
+<% elsif  @course.subject == "PMI" %>
+	<h1>Product Management Immersive</h1>
+<% elsif  @course.subject == "UXI" %>
+	<h1>User Experience Design Immersive</h1>
+<% end %>
 
-<a href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
+	
+
+
+	First Day of Class: <%= @course.start_date.strftime("%a, %b %e") %>
+	Last Day of Class: <%= @course.end_date.strftime("%a, %b %e") %>
+	Location: <%= @course.location %>
+	Price: $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %>
+
+
+<a class="button button-primary" href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
