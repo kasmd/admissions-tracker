@@ -164,7 +164,7 @@ height: auto;
 	display: inline-block;
 }
 
-.login input[type="submit"] {
+.login input[type="submit"], .apply input[type="submit"] {
 	background-color: #e74c3c;
 	color: white;
 	border: #e74c3c;
@@ -310,7 +310,7 @@ div.course div {
 
 /* -- OFFICERS/INSTRUCTORS/STUDENTS INDEX -- */
 
-.index-pages h1 {
+.index-pages h1, .apply h1 {
 	margin-top: 1.5em;
 	margin-bottom: 1.25em;
 	border-bottom: solid #D1D1D1 1px;
@@ -331,6 +331,7 @@ table.index-pages {
 
 /* -- STUDENT SHOW -- */
 
+<<<<<<< HEAD
 .app-header {
 	text-align: center; 
 	margin: 30px; 
@@ -386,4 +387,39 @@ h3 {
 
 
 
+
+
+
+
+/* -- APPLY -- */
+
+.apply h3 {
+	text-align: center;
+}
+
+.prompt {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 1.5em;
+}
+
+
+.apply input[type="submit"] {
+	margin-top: 0;
+	width: 100%;
+}
+
+.apply label, .apply input[type="file"] {
+	display: inline;
+}
+
+.apply ol {
+	margin-bottom: 3em;
+}
+
+.apply label {
+	padding-bottom: 2em;
+	margin-right: 2em;
+}
 
