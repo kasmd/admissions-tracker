@@ -404,21 +404,36 @@ table.index-pages {
 	color: #33C3F0;
 }
 
-<<<<<<< HEAD
 .submission-attachment {
 	font-size: 20px; 
 }
 
 /* -- OFFICER SHOW -- */
 
-.officer-show-name {
-	/*float: left;*/ 
-
+.gravatar {
+	margin: 20px; 
 }
 
-.gravatar {
-	float: right;
-	position: relative;
+.officer-show-name {
+	margin: 10px; 
+	font-size: 5em;  
+}
+
+.officer-student-info {
+	text-align: center; 
+}
+
+#start_phonescreen, #start_interview {
+	border: solid #D1D1D1 1px;
+	padding: 1em;
+}
+
+#start_phonescreen input[type="submit"], #start_interview input[type="submit"] {
+	width: 100%;
+	background-color: #e74c3c;
+	border: #e74c3c;
+	color: white;
+}
 
 /* -- APPLY -- */
 
@@ -450,7 +465,6 @@ table.index-pages {
 	padding-bottom: 2em;
 	margin-right: 2em;
 }
-
 
 /* -- QUESTIONNAIRE -- */
 
