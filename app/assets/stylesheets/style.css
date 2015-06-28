@@ -380,35 +380,82 @@ table.index-pages {
 
 .app-box {
 	float: left;
-	width: 500px;
-	font-size: 20px; 
-	margin: 50px; 
-	margin-left: 200px; 
+	width: 32%;
+	height: 25em;
+	font-size: 1em; 
+	margin: 5%; 
+	margin-left: 12%; 
 	text-align: center; 
 	border: solid 1px #bbbbbb; 
 }
 
 .course-box {
 	float: right;
-	width: 500px;
-	font-size: 20px; 
-	margin: 50px; 
-	margin-right: 200px;
+	width: 32%;
+	height: 25em;
+	font-size: 1em; 
+	margin: 5%; 
+	margin-right: 12%;
 	text-align: center; 
 	border: solid 1px #bbbbbb; 
 }
 
 .status-box {
 	clear: both;
+	text-align: center;
 }
 
 .status {
-	font-size: 50px; 
-
+	font-size: 4em; 
 }
 
-h3 {
+.info {
 	color: #33C3F0;
+}
+
+.submission-attachment {
+	font-size: 1.5em; 
+	margin-left: 12%;
+}
+
+.notes {
+	color: #e74c3c
+}
+
+/* -- OFFICER SHOW -- */
+
+.officer-show-name {
+	border-bottom: solid #bbbbbb 1px;
+	color: #33C3F0;
+}
+
+.results {
+	border-bottom: solid #bbbbbb 1px;
+}
+
+.gravatar {
+	margin: 3.5em; 
+}
+
+.officer-student-info {
+	text-align: center; 
+	margin-left: auto;
+  margin-right: auto; 
+  width: 40%; 
+}
+
+.instruct-officer-buttons {
+	text-align: center; 
+}
+
+/*INSTRUCTOR SHOW */
+
+.view_type {
+	text-align: center; 
+	margin-left: auto;
+  margin-right: auto; 
+  width: 40%; 
+  padding-top: 1em; 
 }
 
 /* -- APPLY -- */
@@ -441,7 +488,6 @@ h3 {
 	padding-bottom: 2em;
 	margin-right: 2em;
 }
-
 
 /* -- QUESTIONNAIRE -- */
 
