@@ -1,23 +1,28 @@
-<h1><%= @submission.course.subject %> Application for <%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
+<div class="student-show">
+	<h1><%= @submission.course.subject %> Application for <%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
 
-<h3>Application Information:</h3>
-<p><strong>First Name:</strong> <%= @submission.student.f_name %></p>
-<p><strong>Last Name:</strong> <%= @submission.student.l_name %></p>
-<p><strong>Email:</strong> <%= @submission.student.email %></p>
-<p><strong>Phone:</strong> <%= @submission.student.phone_number %></p>
-<br>
-<p><strong>Course:</strong> <%= @submission.course.subject %></p>
-<p><strong>Location:</strong> <%= @submission.course.location %></p>
-<p><strong>Course Dates:</strong> <%= @submission.course.start_date.strftime('%m/%d/%y') %> - <%= @submission.course.end_date.strftime('%m/%d/%y') %></p>
-<p><strong>Cost of Course:</strong> $<%= number_with_precision(@submission.course.price, :precision => 2, :delimiter => ',') %></p>
-<br>
-<p><strong>Status of Application:</strong> <%= @submission.status.capitalize %></p>
-<p><strong>Date of Submission:</strong> <%= @submission.created_at.strftime('%m/%d/%y %I:%M %P') %></p>
-<p><strong>Application:</strong></p>
-<div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
-<br>
-<p><em>If any of this information is incorrect or needs to be updated, please contact your Admissions Counselor.</em></p>
+	<h3>Application Information:</h3>
+	<p><strong>First Name:</strong> <%= @submission.student.f_name %></p>
+	<p><strong>Last Name:</strong> <%= @submission.student.l_name %></p>
+	<p><strong>Email:</strong> <%= @submission.student.email %></p>
+	<p><strong>Phone:</strong> <%= @submission.student.phone_number %></p>
+	<br>
+	<p><strong>Course:</strong> <%= @submission.course.subject %></p>
+	<p><strong>Location:</strong> <%= @submission.course.location %></p>
+	<p><strong>Course Dates:</strong> <%= @submission.course.start_date.strftime('%m/%d/%y') %> - <%= @submission.course.end_date.strftime('%m/%d/%y') %></p>
+	<p><strong>Cost of Course:</strong> $<%= number_with_precision(@submission.course.price, :precision => 2, :delimiter => ',') %></p>
+	<br>
+	<p><strong>Status of Application:</strong> <%= @submission.status.capitalize %></p>
+	<p><strong>Date of Submission:</strong> <%= @submission.created_at.strftime('%m/%d/%y %I:%M %P') %></p>
+	<p><strong>Application:</strong></p>
+	<div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
+	<br>
+	<p><em>If any of this information is incorrect or needs to be updated, please contact your Admissions Counselor.</em></p>
 
-<a href="/students/submissions">Back to Submissions Page</a>
+	<a href="/students/submissions">Back to Submissions Page</a>
+</div>
+
+
+
 
 
