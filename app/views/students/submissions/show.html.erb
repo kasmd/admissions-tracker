@@ -26,12 +26,15 @@
 
 	<p class="status"><strong>Status of Application:</strong> 
 		<% if @submission.status == 'accepted' %> 
-		<img src="http://s284.photobucket.com/user/blackgragon/media/Accepted.gif.html">
-
+		<img src="https://33.media.tumblr.com/d78afd58bfb04aec5b2377eb31779aea/tumblr_nqnouxVdpG1u0pde2o1_500.gif">
+		<% elsif @submission.status == 'rejected' %> 
+		<img src="http://giphy.com/gifs/animatedtext-transparent-animatedtext-83iW2g0TW35lK">
+		<% else %> 
+		<%= @submission.status.capitalize %>
 		<% end %> 
 
 
-		<%= @submission.status.capitalize %>
+	
 
 	</p>
 	<p><strong>Date of Submission:</strong> <%= @submission.created_at.strftime('%m/%d/%y %I:%M %P') %></p>
