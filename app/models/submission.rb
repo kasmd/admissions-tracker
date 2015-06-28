@@ -20,7 +20,7 @@ class Submission < ActiveRecord::Base
 	has_one :phonescreen
 	has_one :interview
 
-	validates :application_file_name, presence: true
+	# validates :application_file_name, presence: true
 
 	def save_attachment(attachment)
 		s3 = Aws::S3::Client.new
