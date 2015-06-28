@@ -343,7 +343,7 @@ div.course div {
 
 /* -- OFFICERS/INSTRUCTORS/STUDENTS INDEX -- */
 
-.index-pages h1, .apply h1 {
+.index-pages h1, .apply h1, .questionnaire h1 {
 	margin-top: 1.5em;
 	margin-bottom: 1.25em;
 	border-bottom: solid #D1D1D1 1px;
@@ -402,27 +402,6 @@ h3 {
 	color: #33C3F0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -- APPLY -- */
 
 .apply h3 {
@@ -435,7 +414,6 @@ h3 {
 	margin-right: auto;
 	padding-bottom: 1.5em;
 }
-
 
 .apply input[type="submit"] {
 	margin-top: 0;
@@ -455,3 +433,65 @@ h3 {
 	margin-right: 2em;
 }
 
+
+/* -- QUESTIONNAIRE -- */
+
+.questionnaire h1 {
+	margin-bottom: 0;
+}
+
+#new_phonescreen, .timer-object {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto; 
+}
+
+.timer-object {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#timer {
+	font-size: 10em;
+}
+
+#start-timer {
+	color: white;
+	background-color: #33C3F0;
+	border: #e74c3c;
+}
+
+#new_phonescreen, #new_interview {
+	border: solid #D1D1D1 1px;
+	padding: 1em;
+}
+
+#new_phonescreen input[type="submit"], #new_interview input[type="submit"] {
+	width: 100%;
+	background-color: #e74c3c;
+	border: #e74c3c;
+	color: white;
+}
+
+#new_phonescreen label, #new_interview label {
+	display: inline;
+	padding-left: .5em;
+}
+
+#phonescreen_notes, #interview_notes {
+	padding: 0;
+	width: 100%;
+	resize: vertical;
+  overflow: auto;
+}
+
+#new_interview {
+	margin-top: 3em;
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto; 
+}
+
+#new_interview label, #new_phonescreen label {
+	font-weight: 400;
+}
