@@ -418,15 +418,30 @@ table.index-pages {
 	margin-left: 12%;
 }
 
+.notes {
+	color: #e74c3c
+}
+
 /* -- OFFICER SHOW -- */
+
+.officer-show-name {
+	border-bottom: solid #bbbbbb 1px;
+	color: #33C3F0;
+}
+
+.results {
+	border-bottom: solid #bbbbbb 1px;
+}
 
 .gravatar {
 	margin: 3.5em; 
 }
 
 .officer-student-info {
-	text-align: center;
-	font-size: 1em;  
+	text-align: center; 
+	margin-left: auto;
+  margin-right: auto; 
+  width: 40%; 
 }
 
 .instruct-officer-buttons {
@@ -434,6 +449,14 @@ table.index-pages {
 }
 
 /*INSTRUCTOR SHOW */
+
+.view_type {
+	text-align: center; 
+	margin-left: auto;
+  margin-right: auto; 
+  width: 40%; 
+  padding-top: 1em; 
+}
 
 /* -- APPLY -- */
 

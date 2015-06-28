@@ -22,10 +22,10 @@
 		<br>
 	</div>
 
-	</div>
+</div>
 
-	<div class="status-box"> 
-		<h3 class="status">Application Status:
+<div class="status-box"> 
+	<h3 class="status">Application Status:
 		<% if @submission.status == 'accepted' %> 
 		<img class="status-gifs" src="/images/accepted.gif">
 		<% elsif @submission.status == 'rejected' %> 
@@ -34,16 +34,15 @@
 		<%= @submission.status.capitalize %>
 		<% end %> 
 	</h3>
-	</div>
+</div>
 
-
-	<div class="submission-attachment">
+<div class="submission-attachment">
 	<p><strong>Application:</strong></p>
 	<%= @submission.render_attachment if @submission.has_attachment %>
 	<br>
 	<p><em>If any of this information is incorrect or needs to be updated, please contact your Admissions Counselor.</em></p>
-	<a class="button button-primary" href="/students/submissions">Back to Submissions Page</a>
-	</div>
+	<a class="button button-primary" id="submission-page-button" href="/students/submissions">Back to Submissions Page</a>
+</div>
 
 
 
