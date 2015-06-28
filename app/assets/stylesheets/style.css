@@ -86,12 +86,21 @@ footer a {
 .video {
 	width: 100%;
 	margin: 0 auto;
+	position: relative;
 }
 
 #welcomevid {
 position: relative;
 width: 100%;
 height: auto;
+}
+
+.video-text {
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: 0 auto;
+	transform: translateY(-50%);
 }
 
 .welcometext {
