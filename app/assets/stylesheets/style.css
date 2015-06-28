@@ -44,7 +44,7 @@ nav .button {
 /*----- Footer ------*/
 
 footer {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	bottom:0;
 	width: 100%;
@@ -64,8 +64,6 @@ footer {
 	width: 2em;
 	margin: .5em;
 	border-radius: 50%;
-
-
 }
 
 .admitron {
@@ -90,26 +88,48 @@ h1 {
 	text-align: center;
 }
 
-.homepage-button {
-	text-align: center;
+.video {
+	width: 100%;
+	margin: 0 auto;
 }
+
+#welcomevid {
+position: relative;
+width: 100%;
+height: auto;
+}
+
+.welcometext {
+	padding: 50px; 
+}
+
+.thousands {
+	color: #33C3F0;
+	font-size: 5em;
+}
+
+.button_link {
+	color: white;
+}
+
 
 .testimonial {
 	width: 32%;
-	height: 275px;
+	height: 600px;
 	margin: 0 5px;
-	background-color: #eee;
+	border: solid #cccccc 1px; 
 	float: left;
 	text-align: center;
-
+	font-size: 30px; 
 }
 
 .reference {
 	margin: 5px auto;
+	margin-top: 20px; 
 	border-radius: 50%;
 	overflow: hidden;
-	width: 100px;
-  height: 100px;
+	width: 150px;
+  height: 150px;
 }
 
 /*----- Courses ------*/
