@@ -408,7 +408,7 @@ h3 {
 }
 
 #new_phonescreen, .timer-object {
-	width: 35%;
+	width: 40%;
 	margin-right: auto;
 	margin-left: auto; 
 }
@@ -440,11 +440,12 @@ h3 {
 	color: white;
 }
 
-#new_phonescreen label {
+#new_phonescreen label, #new_interview label {
 	display: inline;
+	padding-left: .5em;
 }
 
-#phonescreen_notes {
+#phonescreen_notes, #interview_notes {
 	padding: 0;
 	width: 100%;
 	resize: vertical;
@@ -453,19 +454,11 @@ h3 {
 
 #new_interview {
 	margin-top: 3em;
-	width: 35%;
+	width: 40%;
 	margin-right: auto;
 	margin-left: auto; 
 }
 
-#new_interview textarea {
-	padding: 0;
-	width: 100%;
-	resize: vertical;
-  overflow: auto;
-}
-
-#new_interview label {
+#new_interview label, #new_phonescreen label {
 	font-weight: 400;
-	display: inline;
 }
