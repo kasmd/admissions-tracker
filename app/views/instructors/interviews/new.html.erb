@@ -1,4 +1,6 @@
-<h1>In-Person Interview</h1>
+<div class="questionnaire" >
+
+	<h1>In-Person Interview</h1>
 
 <%= form_for [:instructors, @submission, @interview] do |f| %> 
 	<%= f.label(:q1, %> 
@@ -97,7 +99,9 @@
 	<%= f.label(:notes, "Notes") %> 
 	<%= f.text_area(:notes) %> <br>
 
-	<%= f.submit %> 
+	<%= f.submit "Finish In-person Interview"%> 
 
-<% end %>
+	<% end %>
+
+</div>
 

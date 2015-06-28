@@ -86,12 +86,45 @@ footer a {
 .video {
 	width: 100%;
 	margin: 0 auto;
+	position: relative;
 }
 
 #welcomevid {
-position: relative;
-width: 100%;
-height: auto;
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.video-text {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 30px #000;
+	font-size: 72px;
+}
+
+.video-text h1 {
+	font-size: 1.3em;
+}
+
+.video-text span {
+	color: #33C3F0;
+}
+
+#scroll-button {
+	transform: rotate(90deg);
+	display: inline-block;
+	text-decoration: none;
+	transition: all 0.7s;
+	color: #fff;
+}
+
+#scroll-button:hover {
+	color: #33C3F0;
 }
 
 .welcometext {
@@ -164,7 +197,7 @@ height: auto;
 	display: inline-block;
 }
 
-.login input[type="submit"] {
+.login input[type="submit"], .apply input[type="submit"] {
 	background-color: #e74c3c;
 	color: white;
 	border: #e74c3c;
@@ -310,7 +343,7 @@ div.course div {
 
 /* -- OFFICERS/INSTRUCTORS/STUDENTS INDEX -- */
 
-.index-pages h1 {
+.index-pages h1, .apply h1, .questionnaire h1 {
 	margin-top: 1.5em;
 	margin-bottom: 1.25em;
 	border-bottom: solid #D1D1D1 1px;
@@ -371,6 +404,7 @@ table.index-pages {
 	color: #33C3F0;
 }
 
+<<<<<<< HEAD
 .submission-attachment {
 	font-size: 20px; 
 }
@@ -385,19 +419,97 @@ table.index-pages {
 .gravatar {
 	float: right;
 	position: relative;
+
+/* -- APPLY -- */
+
+.apply h3 {
+	text-align: center;
+}
+
+.prompt {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 1.5em;
+}
+
+.apply input[type="submit"] {
+	margin-top: 0;
+	width: 100%;
+}
+
+.apply label, .apply input[type="file"] {
+	display: inline;
+}
+
+.apply ol {
+	margin-bottom: 3em;
+}
+
+.apply label {
+	padding-bottom: 2em;
+	margin-right: 2em;
 }
 
 
+/* -- QUESTIONNAIRE -- */
 
+.questionnaire h1 {
+	margin-bottom: 0;
+}
 
+#new_phonescreen, .timer-object {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto; 
+}
 
+.timer-object {
+	text-align: center;
+	margin-bottom: 1em;
+}
 
+#timer {
+	font-size: 10em;
+}
 
+#start-timer {
+	color: white;
+	background-color: #33C3F0;
+	border: #e74c3c;
+}
 
+#new_phonescreen, #new_interview {
+	border: solid #D1D1D1 1px;
+	padding: 1em;
+}
 
+#new_phonescreen input[type="submit"], #new_interview input[type="submit"] {
+	width: 100%;
+	background-color: #e74c3c;
+	border: #e74c3c;
+	color: white;
+}
 
+#new_phonescreen label, #new_interview label {
+	display: inline;
+	padding-left: .5em;
+}
 
+#phonescreen_notes, #interview_notes {
+	padding: 0;
+	width: 100%;
+	resize: vertical;
+  overflow: auto;
+}
 
+#new_interview {
+	margin-top: 3em;
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto; 
+}
 
-
-
+#new_interview label, #new_phonescreen label {
+	font-weight: 400;
+}
