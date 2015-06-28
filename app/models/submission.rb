@@ -20,6 +20,8 @@ class Submission < ActiveRecord::Base
 	has_one :phonescreen
 	has_one :interview
 
+	validates :application_file_name, presence: true
+
 	def save_attachment(attachment)
 		s3 = Aws::S3::Client.new
     user_name = self.student.l_name + "-" + self.student.f_name + "_"
@@ -27,8 +29,9 @@ class Submission < ActiveRecord::Base
     file_key = user_name + self.course_id.to_s + "_application" + File.extname(attachment.original_filename)
 
     self.application_file_name = file_key
-
-  	s3.put_object(bucket: 'admitron5000', key: file_key, body: attachment)
+    File.open(attachment.tempfile, 'rb') do|file|
+	  	s3.put_object(bucket: 'admitron5000', key: file_key, body: file)
+  	end
     
 	end
 	
@@ -59,10 +62,12 @@ class Submission < ActiveRecord::Base
 	end
 
 	def render_attachment
-		s3 = Aws::S3::Client.new
-		file_key = self.application_file_name
-		f = s3.get_object(bucket: 'admitron5000', key: file_key).body
-		f.read
+		if self.application_file_name
+			s3 = Aws::S3::Client.new
+			file_key = self.application_file_name
+			f = s3.get_object(bucket: 'admitron5000', key: file_key).body
+			f.read
+		end
 	end
 
 end
