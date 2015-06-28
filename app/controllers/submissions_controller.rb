@@ -20,7 +20,6 @@ class SubmissionsController < ApplicationController
       redirect_to students_submission_path(current_user.submission_for(params[:course_id]))
     else
       @submission = current_user.submissions.new(course_id: params[:course_id])
-
       @submission.save_attachment(params[:submission][:upload])
       if @submission.save
         UserMailer.welcome_email(current_user,@submission.course).deliver_now

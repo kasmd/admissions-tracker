@@ -1,9 +1,44 @@
-<h1><%= @course.subject %></h1>
-<ul>
-	<li>First Day of Class: <%= @course.start_date.strftime("%a, %b %e") %></li>
-	<li>Last Day of Class: <%= @course.end_date.strftime("%a, %b %e") %></li>
-	<li>Location: <%= @course.location %></li>
-	<li>Price: $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %></li>
-</ul>
+<% if @course.subject == "WDI" %>
+	<div class="course-image" >
+		<img src="/images/WDI_Course.jpg">
+		<h1 class="course-name">Web Development Immersive</h1>
+	</div>
+<% elsif  @course.subject == "PMI" %>
+	<div class="course-image" >
+		<img src="/images/PMI_Course.jpg">
+		<h1 class="course-name">Product Management Immersive</h1>
+	</div>
+<% elsif  @course.subject == "UXI" %>
+	<div class="course-image" >
+		<img src="/images/UXI_Course.jpg">
+		<h1 class="course-name">User Experience Design Immersive</h1>
+	</div>
+<% end %>
 
-<a href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
+<div class="class-container">
+
+	<div class="class-info">
+		<h3>Course Info:</h3>
+		<p><strong>First Day of Class:</strong> <%= @course.start_date.strftime("%a, %b %e") %></p>
+		<p><strong>Last Day of Class:</strong> <%= @course.end_date.strftime("%a, %b %e") %></p>
+		<p><strong>Location:</strong> <%= @course.location %></p>
+		<p><strong>Price:</strong> $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %></p>
+		<a class="button button-primary" href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
+	</div>
+
+	<div class="class-filler">
+		<p>Latte thinker-maker-doer viral parallax engaging intuitive integrate intuitive big data sticky note venture capital. Engaging integrate minimum viable product ship it parallax physical computing pair programming personas. User centered design parallax engaging physical computing affordances physical computing pair programming cortado agile earned media actionable insight responsive paradigm. Ideate disrupt minimum viable product personas ideate entrepreneur personas human-centered design pitch deck.</p>
+		<p>SpaceTeam affordances paradigm physical computing engaging pitch deck grok pivot bootstrapping long shadow. Affordances pivot responsive innovate physical computing user story quantitative vs. qualitative fund paradigm co-working personas waterfall is so 2000 and late. Thought leader waterfall is so 2000 and late food-truck thought leader innovate entrepreneur user story actionable insight piverate actionable insight earned media workflow physical computing fund.</p>
+		<p>Quantitative vs. qualitative pivot unicorn sticky note innovate pitch deck actionable insight waterfall is so 2000 and late iterate 360 campaign. Piverate affordances 360 campaign agile workflow long shadow pitch deck grok 360 campaign. Grok ship it 360 campaign Steve Jobs cortado big data Steve Jobs sticky note. 360 campaign viral unicorn viral 360 campaign responsive moleskine minimum viable product SpaceTeam intuitive convergence waterfall is so 2000 and late viral.</p>
+		<p>Paradigm convergence user story intuitive bootstrapping intuitive integrate personas iterate workflow fund big data innovate. Entrepreneur paradigm user centered design integrate iterate ship it food-truck human-centered design thought leader pitch deck pivot co-working food-truck. Minimum viable product ideate personas SpaceTeam pair programming driven venture capital experiential grok.</p>
+		<p>Integrate pivot unicorn hacker latte pivot viral physical computing moleskine human-centered design piverate 360 campaign. Prototype workflow food-truck cortado latte integrate driven paradigm thought leader. Ideate cortado SpaceTeam affordances grok disrupt grok pivot human-centered design ideate bootstrapping integrate sticky note waterfall is so 2000 and late. Pair programming actionable insight waterfall is so 2000 and late hacker ideate grok workflow user story latte cortado hacker unicorn paradigm. Co-working responsive innovate prototype intuitive cortado driven responsive Steve Jobs prototype responsive.</p>
+	</div>
+
+</div>
+
+	
+
+
+
+
+

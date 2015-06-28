@@ -1,5 +1,5 @@
-class ChangeSubmissionsRenameFileName < ActiveRecord::Migration
+class AddApplicationFileNameToSubmissions < ActiveRecord::Migration
   def change
-  	rename_column :submissions, :file_file_name, :application_file_name
+  	add_column :submissions, :application_file_name, :string
   end
 end

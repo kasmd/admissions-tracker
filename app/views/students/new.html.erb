@@ -1,16 +1,13 @@
-<%= form_for @student, url: signup_path do |form| %>
-  <%= form.label :f_name, 'First Name:' %>
-  <%= form.text_field :f_name, placeholder: 'John' %> <br>
-  <%= form.label :l_name, 'Last Name:' %>
-  <%= form.text_field :l_name, placeholder: 'Doe' %> <br>
-  <%= form.label :phone_number, 'Phone Number:' %>
-  <%= form.telephone_field :phone_number, placeholder: '555-555-5555' %> <br>
-  <%= form.label :email, 'Email:' %>
-  <%= form.email_field :email, placeholder: 'john@example.com' %> <br>
-  <%= form.label :password, 'Password:' %>
-  <%= form.password_field :password %> <br>
-  <%= form.label :password_confirmation, "Confirm Password:" %>
-  <%= form.password_field :password_confirmation %>
-  <%= form.submit 'SIGN UP' %>
-<% end %>
+<div class="login" >
+  <h3>Sign Up</h3>
+  <%= form_for @student, url: signup_path do |form| %>
+    <%= form.text_field :f_name, placeholder: 'First Name'%><br>
+    <%= form.text_field :l_name, placeholder: 'Last Name' %><br>
+    <%= form.telephone_field :phone_number, placeholder: 'Phone Number' %><br>
+    <%= form.email_field :email, placeholder: 'Email' %><br>
+    <%= form.password_field :password, placeholder: 'Password' %><br>
+    <%= form.password_field :password_confirmation, placeholder: 'Confirm Password' %><br>
+    <%= form.submit 'SIGN UP' %>
+  <% end %>
+</div>
 
