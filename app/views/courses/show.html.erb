@@ -1,18 +1,27 @@
 <% if @course.subject == "WDI" %>
+	<img src="/images/WDI_Course.png">
 	<h1>Web Development Immersive</h1>
 <% elsif  @course.subject == "PMI" %>
+	<img src="/images/PMI_Course.png">
 	<h1>Product Management Immersive</h1>
 <% elsif  @course.subject == "UXI" %>
+	<img src="/images/UXI_Course.png">
 	<h1>User Experience Design Immersive</h1>
 <% end %>
+
+
+<div class="class-info">
+	<h3>Course Info:</h3>
+	<p><strong>First Day of Class:</strong> <%= @course.start_date.strftime("%a, %b %e") %></p>
+	<p><strong>Last Day of Class:</strong> <%= @course.end_date.strftime("%a, %b %e") %></p>
+	<p><strong>Location:</strong> <%= @course.location %></p>
+	<p><strong>Price:</strong> $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %></p>
+	<a class="button button-primary" href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
+</div>
 
 	
 
 
-	First Day of Class: <%= @course.start_date.strftime("%a, %b %e") %>
-	Last Day of Class: <%= @course.end_date.strftime("%a, %b %e") %>
-	Location: <%= @course.location %>
-	Price: $<%= number_with_precision(@course.price, :precision => 2, :delimiter => ',') %>
 
 
-<a class="button button-primary" href="/courses/<%= @course.id %>/submissions/new">Apply Now</a>
+

@@ -220,5 +220,14 @@ div.course div {
 	vertical-align: top;
 }
 
+.class-info {
+	background-color: #D1D1D1;
+	border: solid #D1D1D1 1px;
+	width: 15%;
+	padding-left: 3em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
 
 
