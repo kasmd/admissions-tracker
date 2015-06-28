@@ -380,22 +380,22 @@ table.index-pages {
 
 .app-box {
 	float: left;
-	width: 500px;
-	height: 450px;
-	font-size: 20px; 
-	margin: 50px; 
-	margin-left: 200px; 
+	width: 32%;
+	height: 25em;
+	font-size: 1em; 
+	margin: 5%; 
+	margin-left: 12%; 
 	text-align: center; 
 	border: solid 1px #bbbbbb; 
 }
 
 .course-box {
 	float: right;
-	width: 500px;
-	height: 450px;
-	font-size: 20px; 
-	margin: 50px; 
-	margin-right: 200px;
+	width: 32%;
+	height: 25em;
+	font-size: 1em; 
+	margin: 5%; 
+	margin-right: 12%;
 	text-align: center; 
 	border: solid 1px #bbbbbb; 
 }
@@ -406,7 +406,7 @@ table.index-pages {
 }
 
 .status {
-	font-size: 70px; 
+	font-size: 4em; 
 }
 
 .info {
@@ -414,35 +414,26 @@ table.index-pages {
 }
 
 .submission-attachment {
-	font-size: 20px; 
+	font-size: 1.5em; 
+	margin-left: 12%;
 }
 
 /* -- OFFICER SHOW -- */
 
 .gravatar {
-	margin: 20px; 
-}
-
-.officer-show-name {
-	margin: 10px; 
-	font-size: 5em;  
+	margin: 3.5em; 
 }
 
 .officer-student-info {
+	text-align: center;
+	font-size: 1em;  
+}
+
+.instruct-officer-buttons {
 	text-align: center; 
 }
 
-#start_phonescreen, #start_interview {
-	border: solid #D1D1D1 1px;
-	padding: 1em;
-}
-
-#start_phonescreen input[type="submit"], #start_interview input[type="submit"] {
-	width: 100%;
-	background-color: #e74c3c;
-	border: #e74c3c;
-	color: white;
-}
+/*INSTRUCTOR SHOW */
 
 /* -- APPLY -- */
 
