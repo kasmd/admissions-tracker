@@ -144,11 +144,20 @@ footer a {
 .testimonial {
 	width: 32%;
 	height: 600px;
-	margin: 0 5px;
+	/*margin: 0 5px;*/
+	margin-right: .25em;
 	border: solid #cccccc 1px; 
 	float: left;
 	text-align: center;
 	font-size: 30px; 
+}
+
+.testimonial:nth-of-type(1) {
+	margin-left: .75em;
+}
+
+.testimonial:nth-of-type(3) {
+	margin-right: 0;
 }
 
 .reference {
