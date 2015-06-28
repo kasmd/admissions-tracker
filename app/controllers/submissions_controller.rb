@@ -23,7 +23,7 @@ class SubmissionsController < ApplicationController
       # @submission.save_attachment(params[:submission][:upload])
       puts @submission[:submission][:upload]
       if @submission.save
-        UserMailer.welcome_email(current_user,@submission.course).deliver_now
+        # UserMailer.welcome_email(current_user,@submission.course).deliver_now
         redirect_to '/students/submissions'
       else
         render :new
