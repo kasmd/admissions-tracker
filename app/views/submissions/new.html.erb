@@ -1,7 +1,24 @@
-<h1>Apply for a Course</h1>
+<div class="apply">
 
-<%= form_for [@student, @submission], url: course_submissions_path do|f| %>
-	<%= label :upload, 'Upload your resume as a text file:' %> <br>
-	<%= f.file_field :upload %> <br>
-	<%= f.submit "Apply!" , disabled: true, id: 'app-submit'%>
-<% end %>
+	<h1>Apply for a Course</h1>
+
+	<div class="prompt">
+		<h3>Please choose one topic below and respond in a thoughtful way.</h3>
+
+		<ol>
+			<li>What does coding mean to you?</li>
+			<li>You are on page 352 of your autobiography, what's on the page? <em>Respond as if you completed a course from AdmiTron5000 Learning Center.</em></li>
+			<li>The ancient Romans started it when they coined the phrase “Carpe diem.” Jonathan Larson proclaimed “No day but today!” and most recently, Drake explained You Only Live Once (YOLO). Have you ever seized the day? Lived like there was no tomorrow? Or perhaps you plan to shout YOLO while jumping into something in the future. What does #YOLO mean to you?</li>
+		</ol>
+
+		<%= form_for [@student, @submission], url: course_submissions_path do|f| %>
+			<%= label :upload, 'Upload your resume as a text file:' %>
+			<%= f.file_field :upload %><br>
+			<%= f.submit "Apply!" , disabled: true, id: 'app-submit'%>
+		<% end %>
+	</div>
+
+</div>
+
+
+
