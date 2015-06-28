@@ -16,9 +16,9 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    if current_user.has_already_submitted?(params[:course_id])
-      redirect_to students_submission_path(current_user.submission_for(params[:course_id]))
-    else
+    # if current_user.has_already_submitted?(params[:course_id])
+      # redirect_to students_submission_path(current_user.submission_for(params[:course_id]))
+    # else
       puts 'hello'
       @submission = current_user.submissions.new(course_id: params[:course_id])
       # @submission.save_attachment(params[:submission][:upload])
@@ -29,7 +29,7 @@ class SubmissionsController < ApplicationController
       else
         render :new
       end
-    end
+    # end
   end
 
   private
