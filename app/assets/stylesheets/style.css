@@ -104,26 +104,26 @@ footer a {
 	text-align: center;
 	color: white;
 	text-shadow: 0 0 30px #000;
+	font-size: 72px;
 }
 
 .video-text h1 {
-	font-size: 72px;
+	font-size: 1.3em;
 }
 
 .video-text span {
 	color: #33C3F0;
 }
 
-.video-text a {
+#scroll-button {
 	transform: rotate(90deg);
 	display: inline-block;
 	text-decoration: none;
 	transition: all 0.7s;
-	font-size: 4em;
 	color: #fff;
 }
 
-.video-text a:hover {
+#scroll-button:hover {
 	color: #33C3F0;
 }
 

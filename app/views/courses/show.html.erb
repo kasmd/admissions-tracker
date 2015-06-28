@@ -1,17 +1,26 @@
 <% if @course.subject == "WDI" %>
 	<div class="course-image" >
 		<img src="/images/WDI_Course.jpg">
-		<h1 class="course-name">Web Development Immersive</h1>
+		<h1 class="course-name">Web Development Immersive
+			<br>
+			<a id="scroll-button" href=".class-filler">&#10095;</a>
+		</h1>
 	</div>
 <% elsif  @course.subject == "PMI" %>
 	<div class="course-image" >
 		<img src="/images/PMI_Course.jpg">
-		<h1 class="course-name">Product Management Immersive</h1>
+		<h1 class="course-name">Product Management Immersive
+			<br>
+			<a id="scroll-button" href=".class-filler">&#10095;</a>
+		</h1>
 	</div>
 <% elsif  @course.subject == "UXI" %>
 	<div class="course-image" >
 		<img src="/images/UXI_Course.jpg">
-		<h1 class="course-name">User Experience Design Immersive</h1>
+		<h1 class="course-name">User Experience Design Immersive
+			<br>
+			<a id="scroll-button" href=".class-filler">&#10095;</a>
+		</h1>
 	</div>
 <% end %>
 

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('a[href^="."]').click(function(event) {
+	$('#scroll-button').click(function(event) {
 		event.preventDefault();
 		var scrollTarget = $( $(this).attr("href") );
 		console.log(scrollTarget.length);
