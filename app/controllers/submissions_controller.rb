@@ -22,6 +22,7 @@ class SubmissionsController < ApplicationController
       @submission = current_user.submissions.new(course_id: params[:course_id])
       @submission.save_attachment(params[:submission][:upload])
       if @submission.save
+        # this is broken on heroku
         # UserMailer.welcome_email(current_user,@submission.course).deliver_now
         redirect_to '/students/submissions'
       else
