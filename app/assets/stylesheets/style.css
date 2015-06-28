@@ -51,14 +51,8 @@ nav .button {
 
 /*----- Footer ------*/
 
-footer {
-	position: fixed;
-	left: 0;
-	bottom:0;
-}
-
 .site-footer {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	background-color: #eee; 
 }
@@ -86,6 +80,7 @@ footer a {
 	color: white;
 }
 
+
 /*----- Public ------*/
 
 .video {
@@ -101,6 +96,7 @@ height: auto;
 
 .welcometext {
 	padding: 50px; 
+	text-align: center; 
 }
 
 .thousands {
@@ -111,7 +107,6 @@ height: auto;
 .button_link {
 	color: white;
 }
-
 
 .testimonial {
 	width: 32%;
@@ -335,3 +330,60 @@ table.index-pages {
 }
 
 /* -- STUDENT SHOW -- */
+
+.app-header {
+	text-align: center; 
+	margin: 30px; 
+}
+
+.app-box {
+	float: left;
+	width: 500px;
+	font-size: 20px; 
+	margin: 50px; 
+	margin-left: 200px; 
+	text-align: center; 
+	border: solid 1px #bbbbbb; 
+}
+
+.course-box {
+	float: right;
+	width: 500px;
+	font-size: 20px; 
+	margin: 50px; 
+	margin-right: 200px;
+	text-align: center; 
+	border: solid 1px #bbbbbb; 
+}
+
+.status-box {
+	clear: both;
+}
+
+.status {
+	font-size: 50px; 
+
+}
+
+h3 {
+	color: #33C3F0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
