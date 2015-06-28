@@ -90,17 +90,41 @@ footer a {
 }
 
 #welcomevid {
-position: relative;
-width: 100%;
-height: auto;
+	position: relative;
+	width: 100%;
+	height: auto;
 }
 
 .video-text {
 	position: absolute;
 	top: 50%;
-	display: inline-block;
-	margin: 0 auto;
 	transform: translateY(-50%);
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 30px #000;
+}
+
+.video-text h1 {
+	font-size: 72px;
+}
+
+.video-text span {
+	color: #33C3F0;
+}
+
+.video-text a {
+	transform: rotate(90deg);
+	display: inline-block;
+	text-decoration: none;
+	transition: all 0.7s;
+	font-size: 4em;
+	color: #fff;
+}
+
+.video-text a:hover {
+	color: #33C3F0;
 }
 
 .welcometext {
@@ -340,7 +364,6 @@ table.index-pages {
 
 /* -- STUDENT SHOW -- */
 
-<<<<<<< HEAD
 .app-header {
 	text-align: center; 
 	margin: 30px; 

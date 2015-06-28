@@ -1,6 +1,10 @@
-<div class="video"> 
+<div class="video">
 	<%= video_tag "typing1.mp4", :size => "500x500", :controls => true, :autobuffer => true, :autoplay => true, :loop => true, :id => "welcomevid", :controls => false %> 
-</div> 
+	<div class="video-text">
+		<h1>Learn Something <span>New</span></h1>
+		<a href=".welcometext">&#10095;</a>
+	</div>
+</div>
 
 <div class="welcometext">
 	<h1 class="thousands">Thousands </h1>
@@ -13,7 +17,7 @@
 <div class="testimonials">
 	<% @randoms.each do |random| %> 
 		<div class="testimonial">
-			<img class="reference" src="<%= random["user"]["picture"]["thumbnail"] %>">
+			<img class="reference" src="<%= random["user"]["picture"]["medium"] %>">
 			<blockquote>
 		  	<q>We hired <%= FFaker::Name.first_name %> to help <%= FFaker::Company.bs %>.</q/>
 		  <p>— <%= random["user"]["name"]["first"].capitalize %> <%= random["user"]["name"]["last"].capitalize %>, <%= FFaker::Company.name %>, <%= FFaker::Job.title %></p>
