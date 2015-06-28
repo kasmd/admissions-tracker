@@ -1,10 +1,13 @@
-<h1><%= @submission.student.f_name %> <%= @submission.student.l_name %></h1>
+<div class="">
+
+<h1 class="officer-show-name"><strong><%= @submission.student.f_name %> <%= @submission.student.l_name %></strong></h1>
 
 <h3>Course Applied to: <%= @submission.course.subject %></h3>
 <h3>Status of Application: <%= @submission.status.capitalize %></h3>
 <h3>Last updated: <%= @submission.updated_at.strftime('%m/%d/%y %I:%M %P') %></h3>
-<%= image_tag gravatar_url(@submission.student.email, '100x100') %>
+<%= image_tag gravatar_url(@submission.student.email, '300x300'), :class => "gravatar" %>
 
+</div>
 
 <div class="submission-attachment"><%= @submission.render_attachment if @submission.has_attachment %></div>
 
@@ -27,9 +30,9 @@
 
 
 <% if session[:user_type] == 'Instructor' && @submission.status == 'pending-in-person' %> 
-  <a href="/instructors/submissions/<%= @submission.id %>/interviews/new"><button>Start In-Person Interview</button></a>		
+  <a href="/instructors/submissions/<%= @submission.id %>/interviews/new"><button class="button button-primary">Start In-Person Interview</button></a>		
 <% elsif session[:user_type] == 'Officer' && @submission.status == 'pending-phone' %> 
-  <a href="/officers/submissions/<%= @submission.id %>/phonescreens/new"><button>Start Phone Interview</button></a>		
+  <a href="/officers/submissions/<%= @submission.id %>/phonescreens/new"><button class="button button-primary">Start Phone Interview</button></a>		
 <% end %> 
 
 

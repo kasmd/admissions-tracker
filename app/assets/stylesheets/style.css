@@ -339,6 +339,7 @@ table.index-pages {
 .app-box {
 	float: left;
 	width: 500px;
+	height: 450px;
 	font-size: 20px; 
 	margin: 50px; 
 	margin-left: 200px; 
@@ -349,6 +350,7 @@ table.index-pages {
 .course-box {
 	float: right;
 	width: 500px;
+	height: 450px;
 	font-size: 20px; 
 	margin: 50px; 
 	margin-right: 200px;
@@ -358,20 +360,32 @@ table.index-pages {
 
 .status-box {
 	clear: both;
+	text-align: center;
 }
 
 .status {
-	font-size: 50px; 
-
+	font-size: 70px; 
 }
 
-h3 {
+.info {
 	color: #33C3F0;
 }
 
+.submission-attachment {
+	font-size: 20px; 
+}
 
+/* -- OFFICER SHOW -- */
 
+.officer-show-name {
+	/*float: left;*/ 
 
+}
+
+.gravatar {
+	float: right;
+	position: relative;
+}
 
 
 
