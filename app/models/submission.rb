@@ -29,7 +29,6 @@ class Submission < ActiveRecord::Base
     file_key = user_name + self.course_id.to_s + "_application" + File.extname(attachment.original_filename)
 
     self.application_file_name = file_key
-    binding.pry
     File.open(attachment.tempfile, 'rb') do|file|
 	  	s3.put_object(bucket: 'admitron5000', key: file_key, body: file)
   	end
