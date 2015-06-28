@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	position: relative;
 }
 
 .page-wrapper {
@@ -27,6 +28,12 @@ header {
 
 .logo {
 	padding: 0.25em;
+	display: inline-block;
+}
+
+.logo img {
+	height: 3.5em;
+	width: 4.5em;
 }
 
 nav {
@@ -40,19 +47,11 @@ nav .button {
 	margin-bottom: 0; 
 }
 
-.logo img {
-	width: 3.5em;
-	height: 3.5em;
-}
-
-.logo {
-	display: inline-block;
-}
 
 /*----- Footer ------*/
 
 .site-footer {
-	position: fixed;
+	bottom: 0;
 	width: 100%;
 	background-color: #eee; 
 }
