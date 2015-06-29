@@ -567,9 +567,20 @@ table.index-pages {
 /*REJECTED */
 
 #rejected {
-	font-family: Impact; 
-	color: red; 
-	text-shadow: 0 0 0 3px black;
+  font-family: Impact;
+  color: #e74c3c;
+  text-shadow: 2px 2px 0 black;
+  -webkit-text-stroke: 2px black;
+  transform: rotate(-20deg) scale(1.5);
+  display: inline-block;
+  margin-left: 0.3em;
+  transition: all 0.7s ease-in;
+  opacity: 0;
+}
+
+#rejected.rejected-show {
+  transform: rotate(-10deg) scale(1);
+	opacity: 1;
 }
 
 
