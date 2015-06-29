@@ -40,10 +40,10 @@ class Submission < ActiveRecord::Base
 		total = scores.q1.to_i + scores.q2.to_i + scores.q2.to_i + scores.q3.to_i + scores.q4.to_i + scores.q5.to_i
 		if total > 13
 			self.status = "pending-in-person"
-			self.save
 		else
 			self.status = "rejected"
 		end
+		self.save
 	end
 
 	def interview_change_status
@@ -51,10 +51,10 @@ class Submission < ActiveRecord::Base
 		total = scores.q1.to_i + scores.q2.to_i + scores.q2.to_i + scores.q3.to_i + scores.q4.to_i + scores.q5.to_i
 		if total > 13
 			self.status = "accepted"
-			self.save
 		else
 			self.status = "rejected"
 		end
+		self.save
 	end
 
 	def has_attachment
