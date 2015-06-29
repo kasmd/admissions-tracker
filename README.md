@@ -22,6 +22,8 @@ HTML, CSS, Javascript, jQuery, Ruby on Rails, SendGrid to build this application
 
 ## To Demo
 
+[Visit our site](http://admitron5000.herokuapp.com/)
+
 As a student:
 * Create a username and password
 
