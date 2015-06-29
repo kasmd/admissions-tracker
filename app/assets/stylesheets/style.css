@@ -51,7 +51,10 @@ nav .button {
 /*----- Footer ------*/
 
 .site-footer {
+	position: relative;
 	bottom: 0;
+	height: 3.4em;
+	margin-top: 1em;
 	width: 100%;
 	background-color: #eee; 
 }
@@ -61,24 +64,29 @@ nav .button {
 }
 
 .social-links img {
-	height: 2em; 
 	width: 2em;
-	margin: .5em;
+	margin: 0.5em 0.5em 0 0.5em;
 	border-radius: 50%;
 }
 
 .admitron {
 	position: absolute;
 	top: 50%;
-	right: 2em;
+	right: -0.4em;
 	transform: translateY(-50%);
-	height: 4em;
+	margin: 0;
+	height: 1.7em;
+	font-size: 2em;
+	font-family: Helvetica;
 }
 
 footer a {
 	color: white;
 }
 
+.admitron span {
+	color: #33C3F0;
+}
 
 /*----- Public ------*/
 
@@ -123,6 +131,7 @@ footer a {
 }
 
 #scroll-button:hover {
+	text-shadow: 0 0 20px rgba(51, 195, 240, 0.6);
 	color: #33C3F0;
 }
 
@@ -138,6 +147,10 @@ footer a {
 
 .button_link {
 	color: white;
+}
+
+.testimonials {
+	height: 605px;
 }
 
 .testimonial {
