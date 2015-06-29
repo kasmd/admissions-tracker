@@ -47,11 +47,10 @@ pass_interview = Interview.create({q1: 3, q2: 4, q3: 4, q4: 4, q5: 4, notes: "Th
 
 phonescreen_fail = Phonescreen.create({q1: 2, q2: 1, q3: 3, q4: 2, q5: 1, notes: "This person is not qualified. Phone interview was terrible. Doesn't know the difference between a rails migration and a swallow migration."})
 
-sub1 = Submission.create(student: student_1, course: wdi, status: "accepted", instructor_id: instructor, officer_id: officer, phonescreen_id: pass_phonescreen.id, interview_id: pass_interview.id)
+Submission.create(student: student_1, course: wdi, status: "accepted", instructor_id: instructor, officer_id: officer, phonescreen_id: pass_phonescreen.id, interview_id: pass_interview.id, application_file_name: "student-testberg-test-submission.txt")
 
-sub2 = Submission.create(student: student_1, course: uxi, status: "pending-phone")
-binding.pry
-Submission.create(student: student_2, course: wdi, status: "pending-phone", officer_id: officer)
+Submission.create(student: student_1, course: uxi, status: "pending-phone", application_file_name: "student-testberg-test-submission.txt")
+Submission.create(student: student_2, course: wdi, status: "pending-phone", officer_id: officer, application_file_name: "student-testberg-test-submission.txt")
 
-Submission.create(student: student_2, course: pmi, status: "rejected", officer_id: officer, phonescreen_id: phonescreen_fail.id)
+Submission.create(student: student_2, course: pmi, status: "rejected", officer_id: officer, phonescreen_id: phonescreen_fail.id, application_file_name: "student-testberg-test-submission.txt")
 
