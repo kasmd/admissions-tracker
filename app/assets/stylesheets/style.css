@@ -563,3 +563,15 @@ table.index-pages {
 #new_interview label, #new_phonescreen label {
 	font-weight: 400;
 }
+
+/*REJECTED */
+
+#rejected {
+	font-family: Impact; 
+	color: red; 
+	text-shadow: 0 0 0 3px black;
+}
+
+
+
+

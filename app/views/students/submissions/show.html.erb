@@ -29,7 +29,8 @@
 		<% if @submission.status == 'accepted' %> 
 		<img class="status-gifs" src="/images/accepted.gif">
 		<% elsif @submission.status == 'rejected' %> 
-		<img class="status-gifs" src="http://giphy.com/gifs/animatedtext-transparent-animatedtext-83iW2g0TW35lK">
+	<!-- 	<img class="status-gifs" src="http://giphy.com/gifs/animatedtext-transparent-animatedtext-83iW2g0TW35lK"> -->
+		<span id="rejected">REJECTED!</span>
 		<% else %> 
 		<%= @submission.status.capitalize %>
 		<% end %> 
