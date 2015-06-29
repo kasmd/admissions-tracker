@@ -12,8 +12,8 @@
 		</ol>
 
 		<%= form_for [@student, @submission], url: course_submissions_path do|f| %>
-			<%= label :upload, 'Upload your answer as a text file:' %>
-			<%= f.file_field :upload %><br>
+			<%= label :upload, 'Upload your answer as a .txt file:' %>
+			<%= f.file_field :upload, accept: ".txt" %><br>
 			<%= f.submit "Apply!" , disabled: true, id: 'app-submit'%>
 		<% end %>
 		<% if @submission.errors %>
