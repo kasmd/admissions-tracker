@@ -9,10 +9,10 @@ This project is an Admissions Tracker built using Ruby on Rails. This was a coll
 
 ## Features
 
-The Admissions Tracker was built for four types of users: Potenital Candidates, Existing Candidates, Admissions Officers, and Instructors. All users are able to view courses and the course specifics. 
+The Admissions Tracker was built for four types of users: Potential Candidates, Existing Candidates, Admissions Officers, and Instructors. All users are able to view courses and the course specifics. 
 Potential candidates are able to apply for a particular course and then view a candidate profile that displays their submitted application information.
 Admissions Officers can log into the site and view potential candidates and access a questionnaire for a phone screen. A timer is available on the questionnaire for use by the Admissions Officer.
-Instructors are also able to log into the site and view potential candidates. Instructors can access a questionnaire for an inperson interview.  
+Instructors are also able to log into the site and view potential candidates. Instructors can access a questionnaire for an in-person interview.  
 
 ## Technology
 
